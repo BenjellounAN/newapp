@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171612">
+<title>Realistic Flipbook Demo</title>
+<style>
+:root{--ink:#241e18;--gold:#bd9863;--paper:#f2e9d8;--shade:#17120d}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif;color:#f7f2e9;background:#171612}
+body{overflow-x:hidden;background:radial-gradient(ellipse at 50% 34%,#393229 0,#211e19 36%,#151411 78%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+main{width:min(1100px,100%);margin:auto;min-height:100svh;padding:54px 22px 35px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.kicker{font:10px/1.4 Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#c3a77f;margin:0 0 10px;text-align:center}
+h1{font-weight:400;font-size:clamp(28px,4.6vw,48px);line-height:1.08;margin:0 0 11px;text-align:center;letter-spacing:-.035em}
+.sub{font:13px/1.6 Arial,sans-serif;color:#b7b0a6;text-align:center;margin:0 0 40px}
+.stage{width:min(900px,94vw);height:clamp(350px,54vw,550px);position:relative;perspective:2200px;filter:drop-shadow(0 34px 34px rgba(0,0,0,.45));}
+.book{position:absolute;left:50%;top:50%;width:min(760px,100%);height:88%;transform:translate(-50%,-50%);transform-style:preserve-3d;display:flex;}
+.book:before{content:"";position:absolute;left:50%;top:1%;height:98%;width:17px;transform:translateX(-50%);background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(255,255,255,.22) 38%,rgba(0,0,0,.26) 65%,rgba(255,255,255,.08));z-index:30;pointer-events:none}
+.book:after{content:"";position:absolute;left:4%;right:4%;bottom:-7%;height:9%;background:radial-gradient(ellipse,rgba(0,0,0,.72),transparent 70%);filter:blur(12px);z-index:-1}
+.leaf{position:absolute;inset:0 0 0 50%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.05s cubic-bezier(.22,.7,.12,1);cursor:pointer;}
+.leaf.turned{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;background:var(--paper);color:var(--ink);padding:clamp(20px,4vw,48px);box-shadow:inset 12px 0 20px -19px #312419,inset -1px 0 rgba(100,74,48,.22);}
+.face:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.19;background:repeating-linear-gradient(0deg,rgba(79,54,32,.06) 0px,rgba(79,54,32,.06) 1px,transparent 1px,transparent 4px),linear-gradient(100deg,rgba(255,255,255,.45),transparent 24%,rgba(99,75,48,.06) 75%,rgba(255,255,255,.2))}
+.face.back{transform:rotateY(180deg);background:linear-gradient(90deg,#ded2bd,#f4ead9 7%,#f2e9d8);box-shadow:inset -12px 0 20px -19px #312419,inset 1px 0 rgba(100,74,48,.19)}
+.face.front{background:linear-gradient(90deg,#e2d6c1,#f5ecdc 8%,#f1e7d5)}
+.cover .face{background:linear-gradient(135deg,#44372a,#201b15 48%,#392c20);color:#e9d6b5;border:1px solid rgba(219,187,135,.45);padding:clamp(18px,4vw,44px)}
+.cover .face:before{content:"";position:absolute;inset:14px;border:1px solid rgba(215,183,133,.45);box-shadow:inset 0 0 30px rgba(0,0,0,.18)}
+.cover .face:after{opacity:.1;background:repeating-linear-gradient(135deg,transparent 0 4px,rgba(255,255,255,.2) 5px,transparent 6px 11px)}
+.cover-inner{height:100%;border:1px solid rgba(215,183,133,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;z-index:1;padding:16px}
+.cover-mark{font-size:clamp(32px,7vw,70px);line-height:1;margin-bottom:18px;color:#c4a776}.cover-title{font-size:clamp(22px,4vw,40px);letter-spacing:.09em;text-transform:uppercase;line-height:1.2}.cover-sub{font:10px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#c8b596;margin-top:14px}
+.page-no{position:absolute;bottom:20px;left:0;right:0;text-align:center;font:10px Arial,sans-serif;color:#88775e;z-index:2}
+.page-title{font-size:clamp(20px,3.2vw,32px);font-weight:400;line-height:1.12;margin:0 0 17px;position:relative;z-index:2}
+.copy{font-size:clamp(12px,1.55vw,15px);line-height:1.8;color:#514739;max-width:34ch;position:relative;z-index:2;margin:0}
+.rule{height:1px;width:38px;background:#b7996d;margin:14px 0 19px;position:relative;z-index:2}
+.eyebrow{font:9px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#98794d;position:relative;z-index:2;margin-bottom:13px}
+.spread-image{height:54%;min-height:115px;margin:10px 0 15px;position:relative;overflow:hidden;background:linear-gradient(160deg,#d6b88e,#a37348 52%,#614934);box-shadow:0 8px 18px #51402a33;z-index:1}
+.spread-image:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(24,19,14,.58),transparent 70%),linear-gradient(120deg,transparent 30%,rgba(255,255,255,.24) 49%,transparent 59%)}
+.arch{position:absolute;left:15%;bottom:0;width:70%;height:92%;border-radius:50% 50% 0 0/50% 50% 0 0;border:14px solid #694b32;border-bottom:0;box-shadow:inset 0 0 0 8px #d2ad7c}
+.arch:after{content:"";position:absolute;left:31%;right:31%;bottom:0;height:69%;background:linear-gradient(90deg,#5b3c29,#c69961 50%,#593a27);border-radius:50% 50% 0 0/50% 50% 0 0}
+.landscape{background:linear-gradient(180deg,#d9b986 0 45%,#94764c 46% 58%,#514735 59%);}
+.landscape:before{background:linear-gradient(0deg,rgba(18,17,13,.65),transparent 75%),radial-gradient(ellipse at 73% 39%,#f3d39c 0 3%,transparent 20%)}
+.landscape:after{content:"";position:absolute;left:-8%;right:-10%;bottom:0;height:44%;background:linear-gradient(140deg,#413b2e,#756144 45%,#302e25);clip-path:polygon(0 40%,20% 8%,37% 57%,60% 0,81% 54%,100% 10%,100% 100%,0 100%)}
+.dots{display:flex;gap:7px;justify-content:center;margin:17px 0 0}.dots i{width:4px;height:4px;border-radius:50%;background:#b99a6e}
+.controls{display:flex;align-items:center;justify-content:center;gap:17px;margin-top:30px}
+button{font:11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e8dcc8;background:transparent;border:1px solid rgba(215,190,153,.38);padding:12px 19px;min-width:115px;cursor:pointer;transition:.25s}button:hover{background:#bd9863;color:#211b14;border-color:#bd9863}button:disabled{opacity:.36;cursor:default}.count{font:10px Arial,sans-serif;letter-spacing:.2em;color:#a89c8a;min-width:62px;text-align:center}.hint{font:10px Arial,sans-serif;letter-spacing:.08em;color:#81796e;margin-top:17px;text-align:center}
+@media(max-width:600px){main{padding:38px 14px 24px}.sub{margin-bottom:26px}.stage{height:clamp(370px,105vw,480px);width:96vw}.book{height:78%;width:100%}.face{padding:19px 15px}.copy{line-height:1.58}.spread-image{height:42%;min-height:105px}.controls{gap:7px;margin-top:20px}.controls button{min-width:94px;padding:11px 12px;font-size:9px}.hint{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.leaf{transition-duration:.01ms}}
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">A little book, brought to life</p>
+  <h1>Turn a page. Feel the paper.</h1>
+  <p class="sub">A tactile flipbook study with a cloth-bound cover, warm paper and soft, natural shadows.</p>
+  <section class="stage" aria-label="Interactive flipbook">
+    <div class="book" id="book">
+      <div class="leaf cover" data-page="0" style="z-index:7"><div class="face front"><div class="cover-inner"><div class="cover-mark">✳</div><div class="cover-title">The Art<br>of Marrakech</div><div class="cover-sub">Light · Craft · Place</div></div></div><div class="face back"><div class="eyebrow">A visual journal</div><h2 class="page-title">A city made<br>of details.</h2><div class="rule"></div><p class="copy">Beyond the busy lanes, the city reveals itself through carved cedar, quiet courtyards and the patient hands of its makers.</p><div class="page-no">01</div></div></div>
+      <div class="leaf" data-page="1" style="z-index:6"><div class="face front"><div class="eyebrow">01 · Architecture</div><h2 class="page-title">An opening<br>to another world.</h2><div class="spread-image"><div class="arch"></div></div><p class="copy">A doorway frames the light like a painting. Every threshold holds a story.</p><div class="page-no">02</div></div><div class="face back"><div class="eyebrow">02 · The medina</div><h2 class="page-title">A rhythm of<br>colour and shade.</h2><div class="rule"></div><p class="copy">The medina moves at its own pace. Sunlight slips across plaster walls; footsteps echo beneath old arches.</p><div class="dots"><i></i><i></i><i></i></div><div class="page-no">03</div></div></div>
+      <div class="leaf" data-page="2" style="z-index:5"><div class="face front"><div class="eyebrow">03 · The landscape</div><div class="spread-image landscape"></div><h2 class="page-title">Where the city<br>meets the hills.</h2><p class="copy">At the edge of Marrakech, the horizon opens into ochre plains and the distant Atlas.</p><div class="page-no">04</div></div><div class="face back"><div class="eyebrow">04 · Handmade</div><h2 class="page-title">Made slowly.<br>Made to last.</h2><div class="rule"></div><p class="copy">Clay, wool, brass and wood carry the marks of the hands that shaped them. Imperfection is part of the beauty.</p><div class="page-no">05</div></div></div>
+      <div class="leaf cover" data-page="3" style="z-index:4"><div class="face front"><div class="eyebrow">The final note</div><h2 class="page-title">Keep looking.<br>There is always<br>another detail.</h2><div class="rule"></div><p class="copy">A small tribute to the textures, light and everyday beauty of Marrakech.</p><div class="page-no">06</div></div><div class="face back"><div class="cover-inner"><div class="cover-mark">✳</div><div class="cover-title">Fin</div><div class="cover-sub">Marrakech · Morocco</div></div></div></div>
+    </div>
+  </section>
+  <nav class="controls" aria-label="Flipbook controls"><button id="prev" type="button">← Previous</button><span class="count" id="count">Cover</span><button id="next" type="button">Next →</button></nav>
+  <p class="hint">Tap the page, use the arrows, or swipe on mobile</p>
+</main>
+<script>
+(() => {
+  const leaves=[...document.querySelectorAll('.leaf')],prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
+  let current=0;
+  function render(){leaves.forEach((leaf,i)=>{leaf.classList.toggle('turned',i<current);leaf.style.zIndex=String(i<current?i+1:leaves.length-i+3)});prev.disabled=current===0;next.disabled=current===leaves.length;count.textContent=current===0?'Cover':current===leaves.length?'End':`${String(current).padStart(2,'0')} / 04`;}
+  function forward(){if(current<leaves.length){current++;render()}}
+  function back(){if(current>0){current--;render()}}
+  next.addEventListener('click',forward);prev.addEventListener('click',back);
+  leaves.forEach((leaf,i)=>leaf.addEventListener('click',()=>{if(i>=current)forward();else back()}));
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')forward();if(e.key==='ArrowLeft')back()});
+  let touchX=0;document.querySelector('.stage').addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});document.querySelector('.stage').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)(dx<0?forward:back)()},{passive:true});
+  render();
+})();
+</script>
+</body>
+</html>
