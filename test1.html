@@ -1,2156 +1,680 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Primary Meta Tags -->
-  <title>Delivery Marrakech</title>
-  <meta name="title" content="Delivery Service in Marrakech 24/7 | McDonald's, KFC, pizza hut, papa jhons, & More">
-  <meta name="description" content="Fast 24/7 delivery in Marrakech from McDonald's, KFC, restaurants, supermarkets. Order now for quick delivery! Free delivery available.">
-  <meta name="keywords" content="delivery marrakech, delivery mcdonald's marrakech, delivery service marrakech, food delivery marrakech, kfc delivery marrakech, 24/7 delivery marrakech, mcdonald's livraison marrakech, kfc delivery marrakech, food delivery marrakech">
-  <meta name="author" content="Delivery Marrakech">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://delivery-marrakech.com/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://delivery-marrakech.com/">
-  <meta property="og:title" content="#1 Delivery Service in Marrakech 24/7 | McDonald's, KFC,Pizza Hut & More">
-  <meta property="og:description" content="Fast 24/7 delivery in Marrakech from McDonald's, KFC, Pizza hut, supermarkets. Order now for quick delivery!">
-  <meta property="og:image" content="https://i.ibb.co/KpZZdGsM/Logo-of-benjelloun-express.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://delivery-marrakech.com/">
-  <meta property="twitter:title" content="#1 Delivery Service in Marrakech 24/7 | McDonald's, KFC, Restaurants & More">
-  <meta property="twitter:description" content="Fast 24/7 delivery in Marrakech from McDonald's, KFC, restaurants, supermarkets. Order now for quick delivery!">
-  <meta property="twitter:image" content="https://i.ibb.co/KpZZdGsM/Logo-of-benjelloun-express.jpg">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://i.ibb.co/KpZZdGsM/Logo-of-benjelloun-express.jpg">
-  <link rel="apple-touch-icon" href="https://i.ibb.co/HprpBRwp/IMG-5742.png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18159181033"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18159181033');
-</script>
-  <style>
-    /* --- عام --- */
-    :root {
-      --primary-color: #8B0000;
-      --primary-dark: #660000;
-      --primary-light: #A52A2A;
-      --accent-color: #FFD700;
-      --text-dark: #333333;
-      --text-light: #555555;
-      --text-lighter: #777777;
-      --bg-light: #f8f9fa;
-      --bg-white: #ffffff;
-      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: white;
-      color: var(--text-dark);
-      line-height: 1.6;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* --- الهيدر --- */
-    header {
-      background-color: var(--bg-white);
-      padding: 15px 30px;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: var(--shadow);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80px;
-      transition: var(--transition);
-    }
-
-    header.scrolled {
-      height: 70px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* --- قسم البطل --- */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 85vh;
-      overflow: hidden;
-      margin-top: 80px;
-    }
-
-    .hero__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 10s ease;
-    }
-
-    .hero:hover .hero__image {
-      transform: scale(1.05);
-    }
-
-    .hero__content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      z-index: 2;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-      padding: 0 20px;
-    }
-
-    .hero__content h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
-      animation: fadeInUp 1s ease;
-    }
-
-    .hero__content p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin-bottom: 40px;
-      font-weight: 400;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-      animation: fadeInUp 1.2s ease;
-    }
-
-    .hero-btn {
-      background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-      color: white;
-      padding: 14px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 5px 20px rgba(139, 0, 0, 0.3);
-      animation: fadeInUp 1.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-btn:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.5s;
-    }
-
-    .hero-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-    }
-
-    .hero-btn:hover:before {
-      left: 100%;
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 24px;
-      font-weight: bold;
-      color: #000;
-      z-index: 101;
-      max-width: 200px;
-      transition: var(--transition);
-    }
-
-    header.scrolled .logo {
-      max-width: 160px;
-    }
-
-    /* زر القائمة */
-    .menu-btn {
-      position: fixed;
-      top: 25px;
-      right: 30px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 1100;
-      padding: 10px;
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .menu-btn:hover {
-      background: var(--primary-color);
-    }
-
-    .menu-btn:hover .line {
-      background: white;
-    }
-
-    .hamburger {
-      width: 30px;
-      height: 24px;
-      position: absolute;
-      transition: var(--transition);
-    }
-
-    .line {
-      position: absolute;
-      height: 3px;
-      width: 100%;
-      background: var(--primary-color);
-      border-radius: 3px;
-      transition: var(--transition);
-      transform-origin: center;
-    }
-
-    .line:nth-child(1) {
-      top: 0;
-    }
-
-    .line:nth-child(2) {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .line:nth-child(3) {
-      bottom: 0;
-    }
-
-    .menu-btn.active .line:nth-child(1) {
-      transform: translateY(10px) rotate(45deg);
-    }
-
-    .menu-btn.active .line:nth-child(2) {
-      opacity: 0;
-      transform: translateY(-50%) scale(0);
-    }
-
-    .menu-btn.active .line:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg);
-    }
-
-    /* القائمة الكبيرة */
-    .mega-menu {
-      position: fixed;
-      top: 80px;
-      right: 0;
-      width: 100%;
-      max-width: 900px;
-      max-height: calc(100vh - 80px);
-      overflow-y: auto;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, #000000 100%);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      padding: 40px;
-      z-index: 999;
-      opacity: 0;
-      transform: translateY(-20px);
-      visibility: hidden;
-      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .mega-menu.show {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-      display: flex;
-    }
-
-    .menu-column {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .menu-column h3 {
-      color: white;
-      font-size: 1.4rem;
-      margin-bottom: 25px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      position: relative;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .menu-column h3::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent-color);
-      border-radius: 2px;
-    }
-
-    .menu-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .menu-column ul li {
-      margin-bottom: 18px;
-      transition: var(--transition);
-    }
-
-    .menu-column ul li:hover {
-      transform: translateX(5px);
-    }
-
-    .menu-column ul li a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      transition: var(--transition);
-      display: block;
-      padding: 8px 0;
-      font-size: 1rem;
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .menu-column ul li a:before {
-      content: "→";
-      opacity: 0;
-      transition: var(--transition);
-      transform: translateX(-10px);
-    }
-
-    .menu-column ul li a:hover {
-      color: white;
-      padding-left: 15px;
-    }
-
-    .menu-column ul li a:hover:before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    @media (max-width: 768px) {
-      .mega-menu {
-        padding: 30px 20px;
-        flex-direction: column;
-        top: 80px;
-      }
-
-      .menu-column {
-        margin-bottom: 30px;
-      }
-
-      .menu-column h3 {
-        font-size: 1.2rem;
-      }
-
-      .hero__content h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero__content p {
-        font-size: 1rem;
-      }
-    }
-
-    /* السلايدر */
-    .slider-container {
-      width: 100%;
-      height: 150px;
-      overflow: hidden;
-      position: relative;
-      margin: 40px 0;
-    }
-
-    .slider-track {
-      display: flex;
-      width: calc(300px * 6);
-      animation: moveCar 19s linear infinite;
-    }
-
-    @keyframes moveCar {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .slide {
-      width: 300px;
-      height: 150px;
-      flex-shrink: 0;
-    }
-
-    /* النصوص والعناوين */
-    .container {
-      text-align: center;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      color: var(--primary-color);
-      margin: 50px 0 25px;
-      position: relative;
-      display: inline-block;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-      border-radius: 3px;
-    }
-
-    /* تحسين تنسيق النص - كما طلبت */
-    .service-text {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      margin: 25px auto;
-      max-width: 900px;
-      line-height: 1.8;
-      opacity: 0;
-      transform: translateX(-30px);
-      transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-      text-align: left;
-      text-justify: inter-word;
-      padding: 0 20px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.2px;
-    }
-
-    .service-text.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .text-highlight {
-      color: var(--primary-color);
-      font-weight: 600;
-      position: relative;
-      display: inline-block;
-    }
-
-    .text-highlight:after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background-color: rgba(139, 0, 0, 0.15);
-      z-index: -1;
-      border-radius: 2px;
-    }
-
-    /* تنسيقات بطاقات المطاعم الجديدة */
-    .restaurant-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      width: 100%;
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .restaurant-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      display: flex;
-      height: 200px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .restaurant-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .image-half {
-      width: 45%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .image-half img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .restaurant-card:hover .image-half img {
-      transform: scale(1.1);
-    }
-
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px;
-    }
-
-    .offer-badge {
-      background: linear-gradient(to right, #FFD700, #D4AF37);
-      color: var(--primary-dark);
-      padding: 5px 10px;
-      border-radius: 10px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      align-self: flex-start;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      letter-spacing: 0.5px;
-    }
-
-    .content-half {
-      width: 55%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-    }
-
-    .title-section {
-      flex: 1;
-    }
-
-    .title {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 5px;
-      letter-spacing: 0.5px;
-    }
-
-    .cuisine {
-      color: var(--text-lighter);
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .rating {
-      background: var(--primary-color);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-    }
-
-    .description {
-      color: var(--text-light);
-      margin-bottom: 12px;
-      line-height: 1.5;
-      font-size: 0.85rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      flex-grow: 1;
-    }
-
-    .delivery-time {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 15px;
-      padding: 6px 12px;
-      background-color: #f8f8f8;
-      border-radius: 18px;
-      align-self: flex-start;
-      font-size: 0.8rem;
-    }
-
-    .delivery-time i {
-      color: var(--primary-color);
-      font-size: 0.8rem;
-    }
-
-    .delivery-time span {
-      font-weight: 600;
-      color: var(--primary-color);
-    }
-
-    .buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: auto;
-    }
-
-    .btn {
-      padding: 10px 14px;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      flex: 1;
-    }
-
-    .btn-order {
-      background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-      color: white;
-      box-shadow: 0 4px 10px rgba(139, 0, 0, 0.25);
-    }
-
-    .btn-order:hover {
-      background: linear-gradient(to right, var(--primary-light), var(--primary-color));
-      box-shadow: 0 6px 12px rgba(139, 0, 0, 0.35);
-      transform: translateY(-2px);
-    }
-
-    .btn-menu {
-      background: white;
-      color: var(--primary-color);
-      border: 1.5px solid var(--primary-color);
-    }
-
-    .btn-menu:hover {
-      background: #fcf7f7;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(139, 0, 0, 0.15);
-    }
-
-    @media (max-width: 768px) {
-      .restaurant-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 40px auto;
-      }
-
-      .restaurant-card {
-        height: auto;
-        flex-direction: column;
-      }
-
-      .image-half,
-      .content-half {
-        width: 100%;
-      }
-
-      .image-half {
-        height: 160px;
-      }
-
-      .content-half {
-        padding: 15px;
-      }
-
-      .title {
-        font-size: 1.1rem;
-      }
-
-      .buttons {
-        flex-direction: row;
-        gap: 8px;
-      }
-
-      .btn {
-        padding: 8px 10px;
-        font-size: 0.75rem;
-      }
-    }
-
-    /* How It Works Section */
-    .how-it-works {
-      background: linear-gradient(to bottom, #ffffff, #f8f6f3);
-      padding: 70px 20px;
-      margin: 60px 0;
-      position: relative;
-    }
-
-    .how-it-works::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238B0000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-      opacity: 0.3;
-      z-index: 0;
-    }
-
-    .how-it-works .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .steps {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .step {
-      background: white;
-      border-radius: 16px;
-      padding: 25px 20px;
-      text-align: center;
-      width: 250px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      position: relative;
-      z-index: 1;
-    }
-
-    .step:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .step-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      color: white;
-      font-size: 25px;
-      box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
-      transition: var(--transition);
-    }
-
-    .step:hover .step-icon {
-      transform: scale(1.05);
-    }
-
-    .step-number {
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      width: 35px;
-      height: 35px;
-      background: white;
-      color: black;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .step h3 {
-      font-size: 1.2rem;
-      color: var(--primary-color);
-      margin-bottom: 12px;
-      font-weight: 600;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .step p {
-      color: var(--text-light);
-      line-height: 1.6;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .steps {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-      }
-
-      .step {
-        width: 100%;
-        max-width: 300px;
-        padding: 20px 15px;
-      }
-
-      .how-it-works {
-        padding: 50px 20px;
-      }
-    }
-
-    /* قسم المطاعم التي نتعامل معها - جديد */
-    .partner-restaurants {
-      background-color: white;
-      /* رمادي غامق */
-      padding: 70px 20px;
-      margin: 60px 0;
-      position: relative;
-    }
-
-    .partner-restaurants .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .restaurant-logos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .restaurant-logo {
-      width: 150px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .restaurant-logo:hover {
-      transform: translateY(-8px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .restaurant-logo img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      filter: grayscale(1);
-      /* جعل الشعارات باللون الرمادي */
-      transition: var(--transition);
-    }
-
-    .restaurant-logo:hover img {
-      filter: grayscale(0);
-      /* إزالة التدرج الرمادي عند التحويم */
-    }
-
-    .restaurant-logo::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .restaurant-logo:hover::after {
-      opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-      .restaurant-logos {
-        gap: 20px;
-      }
-
-      .restaurant-logo {
-        width: 120px;
-        height: 80px;
-        padding: 10px;
-      }
-    }
-
-    /* WhatsApp help widget */
-    .whatsapp-float {
-      position: fixed;
-      left: 20px;
-      bottom: 20px;
-      z-index: 1200;
-      font-family: 'Poppins', sans-serif;
-    }
-    .whatsapp-button {
-      position: relative;
-      display: grid;
-      place-items: center;
-      width: 68px;
-      height: 68px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(35, 20, 20, .24);
-      cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .whatsapp-button:hover { transform: translateY(-3px) scale(1.035); box-shadow: 0 14px 34px rgba(35,20,20,.3); }
-    .whatsapp-button img { display:block; width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-    .whatsapp-message {
-      position: absolute;
-      left: 82px;
-      bottom: 9px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 48px;
-      padding: 11px 12px 11px 16px;
-      color: #171717;
-      background: #fff;
-      border: 1px solid rgba(139,0,0,.14);
-      border-radius: 14px;
-      box-shadow: 0 12px 34px rgba(35,20,20,.2);
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(-12px) scale(.96);
-      transform-origin: left center;
-      transition: opacity .32s ease, transform .42s cubic-bezier(.2,.8,.2,1), visibility .32s;
-      pointer-events: none;
-    }
-    .whatsapp-message::before {
-      content:''; position:absolute; left:-7px; bottom:15px; width:12px; height:12px;
-      background:#fff; border-left:1px solid rgba(139,0,0,.14); border-bottom:1px solid rgba(139,0,0,.14);
-      transform:rotate(45deg);
-    }
-    .whatsapp-message.show-message { opacity:1; visibility:visible; transform:translateX(0) scale(1); pointer-events:auto; }
-    .whatsapp-message-text { font-size:13px; font-weight:600; letter-spacing:.05px; }
-    .whatsapp-message-close {
-      display:grid; place-items:center; flex:0 0 25px; width:25px; height:25px; padding:0;
-      border:0; border-radius:50%; color:#555; background:#f1f1f1; font-size:17px; line-height:1; cursor:pointer;
-      transition:background .2s ease,color .2s ease,transform .2s ease;
-    }
-    .whatsapp-message-close:hover { background:#8b0000; color:#fff; transform:rotate(90deg); }
-    .help-panel {
-      position:absolute; left:0; bottom:82px; width:min(360px,calc(100vw - 32px)); max-height:min(76vh,650px);
-      display:flex; flex-direction:column; overflow:hidden; background:#fff; border:1px solid rgba(139,0,0,.14);
-      border-radius:20px; box-shadow:0 20px 60px rgba(25,15,15,.25); opacity:0; visibility:hidden;
-      transform:translateY(14px) scale(.97); transform-origin:bottom left;
-      transition:opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1),visibility .25s;
-    }
-    .help-panel.is-open { opacity:1; visibility:visible; transform:translateY(0) scale(1); }
-    .help-panel-header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:17px 18px; color:#fff; background:linear-gradient(120deg,#790000,#a20c0c); }
-    .help-panel-title { margin:0; font-size:16px; font-weight:700; letter-spacing:.2px; }
-    .help-panel-subtitle { margin:2px 0 0; color:rgba(255,255,255,.8); font-size:11px; }
-    .help-panel-close { display:grid; place-items:center; width:32px; height:32px; flex:0 0 32px; border:1px solid rgba(255,255,255,.35); border-radius:50%; background:rgba(255,255,255,.12); color:#fff; font-size:20px; cursor:pointer; transition:transform .2s,background .2s; }
-    .help-panel-close:hover { transform:rotate(90deg); background:rgba(255,255,255,.24); }
-    .help-panel-body { padding:15px; overflow:auto; overscroll-behavior:contain; }
-    .help-section-label { display:flex; align-items:center; gap:8px; margin:2px 3px 10px; color:#790000; font-size:11px; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; }
-    .help-section-label::after { content:''; height:1px; flex:1; background:#ece6e6; }
-    .help-question { margin-bottom:8px; border:1px solid #ece8e8; border-radius:12px; background:#fff; overflow:hidden; transition:border-color .2s,box-shadow .2s; }
-    .help-question:hover,.help-question.is-active { border-color:rgba(139,0,0,.34); box-shadow:0 5px 16px rgba(80,20,20,.07); }
-    .help-question-button { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; padding:12px 13px; border:0; background:transparent; color:#181818; text-align:left; font:600 12px/1.4 'Poppins',sans-serif; cursor:pointer; }
-    .help-question-button i { color:#8b0000; font-size:11px; transition:transform .25s ease; }
-    .help-question.is-active .help-question-button i { transform:rotate(180deg); }
-    .help-answer { max-height:0; overflow:hidden; opacity:0; transition:max-height .38s ease,opacity .28s ease; }
-    .help-answer-inner { padding:0 13px 13px; color:#444; font-size:11px; line-height:1.7; }
-    .help-question.is-active .help-answer { opacity:1; }
-    .help-services { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-    .help-service-link { display:flex; align-items:center; justify-content:space-between; gap:7px; min-height:41px; padding:9px 10px; border:1px solid #eee8e8; border-radius:10px; color:#252525; background:#faf9f9; text-decoration:none; font-size:11px; font-weight:600; transition:all .2s ease; }
-    .help-service-link i:first-child { color:#8b0000; font-size:13px; }
-    .help-service-link i:last-child { color:#8a8a8a; font-size:10px; }
-    .help-service-link:hover { border-color:#8b0000; color:#790000; background:#fff; transform:translateY(-2px); box-shadow:0 6px 15px rgba(80,20,20,.09); }
-    @media (max-width:480px) {
-      .whatsapp-float { left:15px; bottom:15px; }
-      .whatsapp-button { width:62px; height:62px; }
-      .whatsapp-message { left:74px; bottom:7px; min-height:44px; padding:9px 10px 9px 13px; }
-      .whatsapp-message-text { font-size:12px; }
-      .help-panel { bottom:74px; width:min(350px,calc(100vw - 30px)); max-height:74vh; }
-      .help-panel-body { padding:13px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .whatsapp-button,.whatsapp-message,.help-panel,.help-question,.help-answer,.help-question-button i,.help-service-link { transition:none !important; }
-    }
-
-    /* Footer */
-    footer {
-      position: relative;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 20%, #000000 100%);
-      color: #fff;
-      padding: 60px 30px 30px;
-      font-family: 'Segoe UI', sans-serif;
-      clip-path: polygon(0 40px, 100% 0, 100% 100%, 0% 100%);
-      margin-top: 60px;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .footer-section {
-      flex: 1 1 250px;
-    }
-
-    .footer-section h2 {
-      color: white;
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .footer-section h3 {
-      color: white;
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer-section h3:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 35px;
-      height: 3px;
-      background: var(--accent-color);
-      border-radius: 2px;
-    }
-
-    .footer-section p {
-      color: #ccc;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      line-height: 2;
-    }
-
-    .footer-section ul li {
-      color: #ccc;
-      transition: var(--transition);
-      font-size: 0.95rem;
-    }
-
-    .footer-section ul li:hover {
-      color: white;
-      transform: translateX(5px);
-    }
-
-    .footer-section a {
-      color: #ccc;
-      text-decoration: none;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-    }
-
-    .footer-section a:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 14px;
-      color: #999;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Language Switch */
-    .language-switch {
-      position: fixed;
-      top: 25px;
-      left: 25px;
-      z-index: 1000;
-      display: flex;
-      gap: 8px;
-      background: white;
-      padding: 6px 10px;
-      border-radius: 50px;
-      box-shadow: var(--shadow);
-    }
-
-    .language-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 20px;
-      transition: var(--transition);
-      font-size: 0.9rem;
-    }
-
-    .language-btn.active {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 85px;
-      right: 25px;
-      width: 45px;
-      height: 45px;
-      background: var(--primary-color);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      z-index: 999;
-      box-shadow: var(--shadow);
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background: var(--primary-dark);
-      transform: translateY(-5px);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0a2f29">
+<title>Book a Private Transfer in Morocco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--ink:#0e1f1c;--muted:#6a7873;--line:rgba(14,31,28,.1);--bg:#f4f1ea;--green:#0f3d36;--green2:#1a6a5d;--gold:#c0922f;--gold2:#e6c273;--err:#d1432f;--ok:#1f9d63;--ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.56,.64,1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.5;min-height:100vh;overflow-x:hidden}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* animated mesh background */
+.mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#f7f4ed,#eef3ef)}
+.mesh i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;will-change:transform}
+.mesh i:nth-child(1){width:60vmax;height:60vmax;background:#bfe3d6;left:-20vmax;top:-18vmax;animation:drift1 18s ease-in-out infinite alternate}
+.mesh i:nth-child(2){width:50vmax;height:50vmax;background:#f3dba0;right:-18vmax;top:25vh;animation:drift2 22s ease-in-out infinite alternate}
+.mesh i:nth-child(3){width:46vmax;height:46vmax;background:#cfe0f5;left:10vmax;bottom:-22vmax;animation:drift1 26s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(12vmax,10vmax) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-14vmax,-8vmax) scale(.9)}}
+
+.app{max-width:680px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 14px 0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-radius:28px;color:#fff;background:linear-gradient(145deg,#0a2f29 0%,#15564b 60%,#1d7364 100%);box-shadow:0 30px 60px -28px rgba(15,61,54,.7);animation:heroIn .9s var(--ease) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+.hero-top{padding:20px 20px 0;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.95rem;letter-spacing:.01em}
+.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--gold2),var(--gold));display:grid;place-items:center;color:#2a1d02;animation:float 4s ease-in-out infinite;box-shadow:0 8px 20px -6px rgba(230,194,115,.8)}
+@keyframes float{50%{transform:translateY(-4px) rotate(-4deg)}}
+.live{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:.74rem;font-weight:700;background:rgba(255,255,255,.12);padding:6px 11px;border-radius:99px;backdrop-filter:blur(8px)}
+.live b{width:8px;height:8px;border-radius:50%;background:#58e0a0;position:relative}
+.live b::after{content:"";position:absolute;inset:0;border-radius:50%;background:#58e0a0;animation:ping 1.6s ease-out infinite}
+@keyframes ping{to{transform:scale(3.2);opacity:0}}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(1.65rem,7.4vw,2.5rem);line-height:1.12;margin:18px 0 8px;letter-spacing:-.015em}
+h1 .w{display:inline-block;opacity:0;transform:translateY(24px) rotateX(-50deg);animation:word .8s var(--ease) forwards;animation-delay:calc(.25s + var(--w)*.08s);transform-origin:bottom}
+@keyframes word{to{opacity:1;transform:none}}
+.hero p{margin:0;color:#d3e6e0;font-size:.95rem;max-width:36ch;animation:fade 1s .9s both}
+@keyframes fade{from{opacity:0}}
+.trust{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;font-size:.78rem;color:#e9f4f0}
+.trust span{display:inline-flex;align-items:center;gap:6px;animation:fade .8s both;animation-delay:calc(1s + var(--k)*.12s)}
+.trust svg{width:16px;height:16px;color:var(--gold2)}
+
+/* card */
+.card{position:relative;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.9);border-radius:26px;padding:20px 16px 0;box-shadow:0 30px 60px -30px rgba(14,31,28,.35),inset 0 1px 0 #fff;animation:heroIn .9s .15s var(--ease) both}
+.step{display:none}
+.step.show{display:block}
+.step.in-r{animation:inR .5s var(--ease)}.step.in-l{animation:inL .5s var(--ease)}
+.step.out-r{display:block;animation:outR .22s ease-in forwards}.step.out-l{display:block;animation:outL .22s ease-in forwards}
+@keyframes inR{from{opacity:0;transform:translateX(50px)}}
+@keyframes inL{from{opacity:0;transform:translateX(-50px)}}
+@keyframes outR{to{opacity:0;transform:translateX(-40px)}}
+@keyframes outL{to{opacity:0;transform:translateX(40px)}}
+.step.show .rise{animation:rise .6s var(--ease) both;animation-delay:calc(var(--d,0)*55ms + .1s)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+h2{font-family:'Fraunces',serif;font-size:1.45rem;margin:0 0 2px;letter-spacing:-.01em}
+.hint{color:var(--muted);font-size:.88rem;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px}
+.full{grid-column:1/-1}
+label.l{display:block;font-size:.78rem;font-weight:800;margin:0 0 6px;transition:color .2s}
+.opt{font-weight:500;color:var(--muted)}
+.fi{position:relative}
+.fi>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gold);pointer-events:none;transition:.35s var(--spring)}
+.fi.ta>svg{top:20px;transform:none}
+.fi:focus-within>svg{color:var(--green2);transform:translateY(-50%) scale(1.25) rotate(-8deg)}
+.fi.ta:focus-within>svg{transform:scale(1.25) rotate(-8deg)}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:rgba(255,255,255,.9);border:1.5px solid var(--line);border-radius:14px;padding:0 14px 0 44px;min-height:54px;-webkit-appearance:none;appearance:none;transition:border-color .25s,box-shadow .25s,transform .25s var(--ease)}
+textarea{padding:15px 14px 15px 44px;min-height:100px;resize:vertical}
+input[type=date],input[type=time]{display:block;text-align:left}
+input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 0 0 4px rgba(26,106,93,.14),0 10px 24px -12px rgba(26,106,93,.5);transform:translateY(-1px)}
+.fi.bad input,.fi.bad textarea{border-color:var(--err);background:#fff6f4;animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.err{display:none;color:var(--err);font-size:.76rem;margin-top:5px;font-weight:700}
+.bad+.err,.fi.bad+.err{display:block;animation:rise .3s both}
+.bad+.err{display:block}
+
+.seg{position:relative;display:grid;grid-template-columns:1fr 1fr;background:rgba(14,31,28,.06);border-radius:16px;padding:4px;margin-bottom:16px}
+.seg::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:#fff;border-radius:12px;box-shadow:0 4px 14px rgba(14,31,28,.15);transition:transform .45s var(--spring)}
+.seg.r::before{transform:translateX(100%)}
+.seg label{position:relative;margin:0;cursor:pointer}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;font-weight:800;font-size:.92rem;color:var(--muted);transition:color .3s}
+.seg input:checked+span{color:var(--green)}
+.seg input:focus-visible+span{outline:2px solid var(--green2)}
+.route{position:relative;display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:start;margin-bottom:14px}
+.swap{margin-top:27px;width:50px;height:50px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 22px -8px rgba(15,61,54,.7);transition:transform .5s var(--spring)}
+.swap.spin{transform:rotate(180deg)}
+.swap:active{scale:.9}
+.flip{animation:flip .45s var(--ease)}
+@keyframes flip{40%{opacity:0;transform:translateY(-8px)}60%{opacity:0;transform:translateY(8px)}}
+@media(max-width:520px){.route{grid-template-columns:1fr}.swap{margin:-4px auto -4px;rotate:90deg}}
+.rt{display:none}.rt.show{display:block}
+
+.ctr{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.9);border:1.5px solid var(--line);border-radius:16px;padding:9px 10px;transition:box-shadow .3s,transform .3s var(--ease)}
+.ctr:hover{box-shadow:0 12px 26px -16px rgba(14,31,28,.5);transform:translateY(-2px)}
+.ctr .ic{color:var(--gold);display:grid}
+.ctr .t{flex:1;min-width:0;font-size:.86rem;font-weight:800;line-height:1.2}
+.ctr .t small{display:block;font-weight:500;color:var(--muted);font-size:.74rem}
+.ctr button{width:42px;height:42px;border-radius:50%;border:0;background:rgba(14,31,28,.06);color:var(--green);cursor:pointer;display:grid;place-items:center;flex:none;transition:.25s var(--spring);position:relative;overflow:hidden}
+.ctr button:active{background:var(--green);color:#fff;transform:scale(.85)}
+.ctr output{min-width:24px;text-align:center;font-weight:800;font-size:1.1rem;display:inline-block}
+.ctr output.bump{animation:numb .35s var(--spring)}
+@keyframes numb{0%{transform:translateY(-10px) scale(1.5);opacity:.3}100%{transform:none;opacity:1}}
+
+.sub{font-weight:800;font-size:.95rem;margin:24px 0 10px}
+.pnote{margin:-4px 0 12px;font-size:.78rem;color:var(--muted);font-weight:600;line-height:1.4}
+
+/* vehicle packages */
+.cars{display:grid;gap:12px;perspective:900px}
+.car{display:flex;align-items:center;gap:14px;padding:14px;border:1.5px solid var(--line);border-radius:20px;cursor:pointer;position:relative;background:rgba(255,255,255,.92);transition:border-color .3s,background .3s,box-shadow .3s,transform .25s ease-out;transform-style:preserve-3d;overflow:hidden}
+.car::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s;pointer-events:none}
+.car:hover::after{transform:translateX(120%)}
+.car input{position:absolute;opacity:0;pointer-events:none}
+/* photo slot: replace the empty span with <img src="..." alt="..."> */
+.vi{width:82px;height:82px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#e9f2ee,#f7ecd0);flex:none;display:block;transition:transform .5s var(--spring),box-shadow .4s}
+.vi img{width:100%;height:100%;object-fit:cover;display:block}
+.ci{flex:1;min-width:0}
+.ci b{display:block;font-size:1rem;letter-spacing:-.005em}
+.ci>small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px;line-height:1.35}
+.feat{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.feat span{font-size:.68rem;font-weight:800;color:var(--green);background:rgba(26,106,93,.08);padding:4px 8px;border-radius:99px;white-space:nowrap}
+.pr{flex:none;display:flex;flex-direction:column;align-items:flex-end;text-align:right;min-width:64px}
+.pr b{font-family:'Fraunces',Georgia,serif;font-size:1.45rem;line-height:1;color:var(--green);font-weight:700}
+.pr small{font-size:.66rem;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-top:4px;line-height:1.2}
+.pr .rq{font-size:.74rem;text-transform:none;letter-spacing:0;color:var(--muted);font-weight:700}
+.tick{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;color:transparent;flex:none;transition:.4s var(--spring)}
+.tick svg{width:15px;height:15px;stroke-width:3}
+.car:has(input:checked){border-color:var(--green2);background:linear-gradient(135deg,#eef8f4,#fff);box-shadow:0 18px 34px -18px rgba(26,106,93,.6)}
+.car:has(input:checked) .vi{transform:scale(1.04);box-shadow:0 12px 22px -12px rgba(15,61,54,.7)}
+.car:has(input:checked) .tick{background:var(--ok);border-color:var(--ok);color:#fff;transform:scale(1.15) rotate(360deg)}
+.car:has(input:focus-visible){outline:2px solid var(--green2)}
+.car:has(input:disabled){opacity:.45;filter:grayscale(.7);cursor:not-allowed}
+.car:has(input:disabled)::before{content:"Too small";position:absolute;top:8px;right:12px;font-size:.62rem;font-weight:800;color:var(--err);text-transform:uppercase;letter-spacing:.06em;z-index:1}
+
+/* included (static) */
+.incl{display:flex;flex-wrap:wrap;gap:8px}
+.incl span{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 14px;border-radius:99px;background:linear-gradient(135deg,#eef8f4,#fff);border:1.5px solid #cfe3dc;font-size:.84rem;font-weight:700;color:var(--ink)}
+.incl svg{width:17px;height:17px;color:var(--ok);stroke-width:2.6}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{margin:0;cursor:pointer}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;gap:7px;min-height:46px;padding:0 15px;border:1.5px solid var(--line);border-radius:99px;font-size:.86rem;font-weight:700;background:rgba(255,255,255,.92);transition:.35s var(--spring)}
+.chip svg{width:17px;height:17px;color:var(--gold);transition:.4s var(--spring)}
+.chip:hover span{transform:translateY(-2px)}
+.chip input:checked+span{background:linear-gradient(135deg,var(--green),var(--green2));border-color:transparent;color:#fff;transform:scale(1.05);box-shadow:0 10px 20px -10px rgba(15,61,54,.8)}
+.chip input:checked+span svg{color:var(--gold2);transform:rotate(360deg) scale(1.15)}
+.chip input:focus-visible+span{outline:2px solid var(--green2);outline-offset:2px}
+
+.sum{position:relative;background:linear-gradient(160deg,#f0f8f5,#fff);border:1.5px solid #cfe3dc;border-radius:20px;padding:16px 14px 8px;margin-top:22px;overflow:hidden}
+.sum h3{margin:0 0 6px;font-size:.85rem;color:var(--green);display:flex;gap:8px;align-items:center}
+.path{display:flex;align-items:center;gap:8px;margin:6px 0 10px;font-weight:800;font-size:.88rem}
+.path em{font-style:normal;max-width:34%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@keyframes draw{to{stroke-dashoffset:0}}
+.row{display:flex;gap:10px;padding:9px 0;font-size:.88rem;border-top:1px solid rgba(14,31,28,.07);animation:rise .5s var(--ease) both;animation-delay:calc(var(--d)*90ms + .3s)}
+.row svg{width:17px;height:17px;color:var(--gold);margin-top:2px}
+.row span{color:var(--muted);min-width:68px}
+.row b{flex:1;font-weight:700;word-break:break-word}
+
+.nav{position:sticky;bottom:0;margin:18px -16px 0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.92) 30%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;gap:10px;border-radius:0 0 26px 26px}
+.btn{position:relative;overflow:hidden;min-height:56px;border-radius:16px;border:0;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .3s var(--spring),box-shadow .3s,width .4s var(--ease)}
+.btn.back{width:56px;background:#fff;border:1.5px solid var(--line);color:var(--ink);flex:none}
+.btn.back[hidden]{display:none}
+.btn.next{flex:1;color:#fff;background:linear-gradient(135deg,var(--green),var(--green2));box-shadow:0 16px 30px -14px rgba(15,61,54,.9)}
+.btn.next::before{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{40%,100%{left:120%}}
+.btn.wa{background:linear-gradient(135deg,#17a354,#25d366);box-shadow:0 16px 30px -14px rgba(23,163,84,.9);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 16px 38px -8px rgba(37,211,102,.9)}}
+.btn:active{transform:scale(.96)}
+.btn .arr{transition:transform .3s var(--spring)}
+.btn.next:hover .arr{transform:translateX(4px)}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.foot{text-align:center;color:var(--muted);font-size:.78rem;padding:16px 0 calc(10px + env(safe-area-inset-bottom,0px))}
+
+/* success overlay */
+.done{position:fixed;inset:0;z-index:50;display:none;place-items:center;background:rgba(244,241,234,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);text-align:center;padding:24px}
+.done.on{display:grid;animation:fade .4s both}
+.done canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.done h2{font-size:1.7rem}
+.done p{color:var(--muted);margin:6px 0 0}
+.done .bar{width:180px;height:5px;border-radius:5px;background:var(--line);margin:20px auto 0;overflow:hidden}
+.done .bar i{display:block;height:100%;width:100%;background:var(--ok);transform-origin:left;animation:load 1.5s linear forwards}
+@keyframes load{from{transform:scaleX(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ---------- v3 additions ---------- */
+.hero{min-height:370px;display:flex;background:#0f3d36}
+.hero-img{position:absolute;inset:-100px 0 0 0;overflow:hidden;background:linear-gradient(110deg,#124f45 30%,#1f7767 50%,#124f45 70%);background-size:200% 100%;animation:skel 1.6s linear infinite;will-change:transform}
+@keyframes skel{to{background-position:-200% 0}}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.15);transition:opacity 1.2s ease,transform 1.6s var(--ease)}
+.hero-img img.ok{opacity:1;transform:scale(1.04);animation:kb 22s ease-in-out 1.6s infinite alternate}
+@keyframes kb{to{transform:scale(1.16) translate(-1.5%,-1%)}}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,31,27,.6) 0%,rgba(6,31,27,.12) 40%,rgba(6,31,27,.9) 100%)}
+.hero-top{display:flex;flex-direction:column;width:100%;padding:20px 20px 24px}
+.hero-copy{margin-top:auto;padding-top:70px}
+
+.sentinel{height:1px;margin-top:-1px}
+.steps{position:sticky;top:calc(8px + env(safe-area-inset-top,0px));z-index:20;margin:16px 0 14px;padding:14px 12px 10px;border-radius:24px;background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.95);box-shadow:0 10px 26px -18px rgba(14,31,28,.35);transition:box-shadow .4s,background .4s;animation:dropIn .9s .45s var(--ease) both}
+.steps.stuck{background:rgba(255,255,255,.9);box-shadow:0 20px 38px -18px rgba(14,31,28,.5)}
+@keyframes dropIn{from{opacity:0;transform:translateY(-18px) scale(.95)}}
+.sgrid{position:relative;display:grid;grid-template-columns:repeat(3,1fr)}
+.track{position:absolute;top:17px;left:16.667%;right:16.667%;height:4px;border-radius:4px;background:rgba(14,31,28,.09);overflow:hidden}
+.fill{position:relative;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--ok));transition:width .9s var(--ease)}
+.fill::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-100%);animation:sweep 2s ease-in-out infinite}
+@keyframes sweep{to{transform:translateX(100%)}}
+.st{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;font:inherit;font-size:.74rem;font-weight:800;color:var(--muted);transition:color .3s;cursor:default;padding:0}
+.st.done{cursor:pointer;color:var(--ok)}
+.st.on{color:var(--ink)}
+.st:focus-visible{outline:2px solid var(--green2);outline-offset:4px;border-radius:10px}
+.dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--line);transition:transform .5s var(--spring),background .4s,border-color .4s,box-shadow .4s}
+.dot svg{width:17px;height:17px}
+.st.on .dot{background:var(--green);border-color:var(--green);color:#fff;transform:scale(1.14);box-shadow:0 0 0 6px rgba(26,106,93,.16);animation:halo 2.4s ease-in-out infinite}
+@keyframes halo{50%{box-shadow:0 0 0 10px rgba(26,106,93,.06)}}
+.st.done .dot{background:var(--ok);border-color:var(--ok);color:#fff}
+.st.done:hover .dot{transform:scale(1.1)}
+.dot.pop{animation:pop .55s var(--spring)}
+@keyframes pop{0%{transform:scale(.5)}100%{transform:scale(1)}}
+.cap{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:var(--muted);font-weight:700;margin-top:10px;padding:8px 6px 0;border-top:1px dashed var(--line)}
+.cap b{color:var(--green);font-weight:800}
+.cap .sw-t{display:inline-block;animation:fade .4s both}
+
+.stage{position:relative;overflow-x:clip;margin:0 -4px;padding:0 4px;transition:height .55s var(--ease)}
+.step.abs{position:absolute;left:4px;right:4px;top:0}
+.step:focus,h2:focus{outline:none}
+.step.in-r{animation:inR .55s var(--ease) both}.step.in-l{animation:inL .55s var(--ease) both}
+.step.out-r{animation:outR .32s ease-in both;pointer-events:none}.step.out-l{animation:outL .32s ease-in both;pointer-events:none}
+@keyframes inR{from{opacity:0;transform:translateX(64px) scale(.98);filter:blur(5px)}}
+@keyframes inL{from{opacity:0;transform:translateX(-64px) scale(.98);filter:blur(5px)}}
+@keyframes outR{to{opacity:0;transform:translateX(-64px) scale(.98);filter:blur(5px)}}
+@keyframes outL{to{opacity:0;transform:translateX(64px) scale(.98);filter:blur(5px)}}
+
+.quick{display:flex;align-items:center;gap:8px;overflow-x:auto;margin:-2px -16px 16px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 24px),transparent)}
+.quick::-webkit-scrollbar{display:none}
+.quick>span{font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;flex:none}
+.quick button,.mini button{flex:none;scroll-snap-align:start;font:inherit;font-size:.8rem;font-weight:700;color:var(--green);background:rgba(26,106,93,.08);border:1px solid rgba(26,106,93,.15);border-radius:99px;padding:8px 13px;min-height:36px;cursor:pointer;transition:transform .3s var(--spring),background .25s,color .25s}
+.quick button:hover,.mini button:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+.quick button:active,.mini button:active{transform:scale(.93)}
+.mini{display:flex;gap:6px;margin-top:8px}
+.mini button{padding:5px 11px;min-height:30px;font-size:.74rem}
+.pulse{animation:pulseIn .7s var(--ease)}
+@keyframes pulseIn{0%{box-shadow:0 0 0 0 rgba(26,106,93,.45);background:#e8f5f0}100%{box-shadow:0 0 0 14px rgba(26,106,93,0)}}
+
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:40;max-width:calc(100vw - 32px);background:#0e1f1c;color:#fff;font-size:.85rem;font-weight:600;padding:12px 18px;border-radius:14px;box-shadow:0 18px 40px -12px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,16px) scale(.95);pointer-events:none;transition:opacity .35s,transform .45s var(--spring)}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+</style>
 </head>
-
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="bag" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+<symbol id="plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+<symbol id="car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="bus" viewBox="0 0 24 24"><path d="M8 6v6M16 6v6M2 12h19.6M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+<symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L8 14.2 3 9.3l6.9-1z"/></symbol>
+<symbol id="smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+<symbol id="wifi" viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0M12 20h.01"/></symbol>
+<symbol id="drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol>
+<symbol id="note" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+<symbol id="route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.3-.1.6.2.3.8 1.3 1.8 2.1 1.2 1 2.2 1.4 2.5 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></symbol><symbol id="snow" viewBox="0 0 24 24"><path d="M12 2v20M4.9 7l14.2 10M4.9 17 19.1 7M9 4l3 2 3-2M9 20l3-2 3 2"/></symbol>
+</defs>
+</svg>
 
-  
-    <!-- مكان لشاشة التحميل -->
-    <div id="loader-container"></div>
-  <!-- Language Switch -->
-  <div class="language-switch">
-    <button class="language-btn active">EN</button>
-    <button class="language-btn">FR</button>
-    <button class="language-btn">AR</button>
-  </div>
-
-  <!-- الهيدر -->
-  <header>
-    <img src="https://i.postimg.cc/v802j8YD/Logo-of-benjelloun-express-1.jpg" alt="Delivery Marrakech - #1 Delivery Service in Marrakech" class="logo">
-
-    <button class="menu-btn" id="menuButton" aria-label="Toggle Menu">
-      <div class="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </button>
-  </header>
-
-  <div class="hero">
-    <!-- الصورة الأساسية -->
-    <img src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/1241c720-cc0d-4132-4d20-a14b750f1500/public" fetchpriority="high" loading="eager" alt="delivery service in marrakech / livreur marrakech " class="hero__image">
-
-    <!-- النص فوق الصورة -->
-    <div class="hero__content">
-      <h1>DELIVERY SERVICE MARRAKECH</h1>
-      <p>Fast delivery service in Marrakech ,Food, groceries and more - available 24/7 in Marrakech</p>
-      <a href="#restaurants" class="hero-btn">
-        <i class="fas fa-utensils"></i> Order Now
-      </a>
-    </div>
-  </div>
-
-  <div class="mega-menu" id="megaMenu">
-    <div class="menu-column">
-      <h3>Our Services</h3>
-      <ul>
-        <li><a href="mcdonalds.html"><i class="fas fa-hamburger"></i> McDonald's</a></li>
-        <li><a href="kfc.html"><i class="fas fa-drumstick-bite"></i> KFC</a></li>
-        <li><a href="pizzas.html"><i class="fas fa-pizza-slice"></i> Pizzas</a></li>
-        <li><a href="https://wa.me/212642620325?text=Hi, i would like to order Sushi now, please"><i class="fas fa-fish"></i> Sushi</a></li>
-      </ul>
-    </div>
-
-    <div class="menu-column">
-      <h3>Much More</h3>
-      <ul>
-        
-        <li><a href="https://wa.me/212642620325?text=Hi, i would like to order Flowers now, please"><i class="fas fa-gift"></i> Flowers Delivery</a></li>
-        <li><a href="https://wa.me/212642620325?text=Hi, i would like to order somethingfrom supermarket now, please"><i class="fas fa-shopping-cart"></i> Supermarket</a></li>
-        <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
-
-      </ul>
-    </div>
-  </div>
-
-  <!-- السلايدر -->
-  <div class="slider-container">
-    <div class="slider-track">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/34d76ab7-0191-4629-4904-474c23a28c00/public" alt="livreur marrakech / delivery services in marrakech">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/2eab587b-e3e1-4c09-ad64-54d7616da900/public" alt="livreur marrakech / delivery services in marrakech">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/99d8b9f7-906b-4e28-7c15-089c1dca6700/public" alt="livreur marrakech / delivery services in marrakech">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/3486cafd-d228-4244-d1ae-6b03e6423e00/public" alt="livreur marrakech / delivery marrakech ">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/2eab587b-e3e1-4c09-ad64-54d7616da900/public" alt="livreur marrakech / delivery services in marrakech">
-      <img class="slide" src="https://imagedelivery.net/dTw6tREJjMhOk7srEzkj3w/99d8b9f7-906b-4e28-7c15-089c1dca6700/public" alt="livreur marrakech / delivery services in marrakech">
-    </div>
-  </div>
-
-  <div class="container">
-    <h2 class="section-title" style=color:black>We deliver from</h2>
-  </div>
-  <!-- بطاقات المطاعم الجديدة -->
-  <div class="restaurant-grid" id="restaurants">
-    <!-- McDonald's Card -->
-    <div class="restaurant-card" data-restaurant="McDonald's" id="mcdonalds-card">
-      <div class="image-half">
-        <img src="https://i.ibb.co/h1f4BWXj/Delivery-marrakech-mcdonald-s.jpg" alt="McDonald's Burger Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">Popular</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">McDonald's</h2>
-            <div class="cuisine">Fast Food • Burgers</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.9
-          </div>
-        </div>
-
-        <p class="description">World-famous burgers and crispy fries prepared with premium ingredients. Our signature Big Mac and Quarter Pounder are customer favorites.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>15-25 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" id="mcdonalds-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="mcdonalds-menu-btn">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- KFC Card - معدلة لفتح kfcmenu.html -->
-    <div class="restaurant-card" data-restaurant="KFC" id="kfc-card">
-      <div class="image-half">
-        <img src="https://i.ibb.co/wrLrWv89/Delivery-marrakech-kfc.jpg" alt="KFC chicken Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">NEW</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">KFC</h2>
-            <div class="cuisine">Fast Food • Chicken</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.8
-          </div>
-        </div>
-
-        <p class="description">Finger-lickin' good chicken with our secret blend of 11 herbs and spices. Crispy on the outside, tender and juicy on the inside.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>20-30 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" id="kfc-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="kfc-menu-btn">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pizza Hut Card (مع إضافة ID) -->
-    <div class="restaurant-card" data-restaurant="Pizza Hut" id="pizzahut-card">
-      <div class="image-half">
-        <img src="https://i.ibb.co/23d9DtjS/Delivery-marrakech-pizza-hut.jpg" alt="Pizza Hut Pizza Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">Cheesy Crust free</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">Pizza Hut</h2>
-            <div class="cuisine">Fast Food • Pizza </div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.7
-          </div>
-        </div>
-
-        <p class="description">Delicious pizzas with fresh ingredients and our signature crust. From classic Margherita to specialty Supreme.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>25-35 min</span>
-        </div>
-
-        <div class="buttons">
-          <!-- إضافة ID للزرين -->
-          <button class="btn btn-order" id="pizzahut-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="pizzahut-menu-btn">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Zushi LAB Card - NEW (Added below Pizza Hut) -->
-    <div class="restaurant-card" data-restaurant="Zushi LAB" id="zushi-card">
-      <div class="image-half">
-        <img src="https://glovo.dhmedia.io/image/stores-glovo/stores/29373b955e76719705ef4cbc9a937bf82de750a305b7948ae75a96e36c2fba39?t=W3siYXV0byI6eyJxIjoibG93In19LHsicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6MTI4MCwiaGVpZ2h0IjoxMjB9fV0=" alt="Zushi LAB - Exquisite Sushi & Asian Cuisine in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">Best Sushi</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">Zushi LAB</h2>
-            <div class="cuisine">Asian • Sushi • Fusion</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.9
-          </div>
-        </div>
-
-        <p class="description">Embark on a culinary journey through Asia with our exquisite sushi and Asian fusion creations, crafted with the freshest ingredients.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>25-35 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" id="zushi-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="zushi-menu-btn">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Papa John's Card -->
-    <div class="restaurant-card" data-restaurant="Papa John's">
-      <div class="image-half">
-        <img src="https://i.ibb.co/cXTjzt6D/Delivery-marrakech-papa-jhons.webp" alt="Papa John's Pizza Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">New </div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">Papa John's</h2>
-            <div class="cuisine">Fast Food • Pizza</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.6
-          </div>
-        </div>
-
-        <p class="description">Better ingredients, better pizza. Fresh dough and signature sauce made from vine-ripened tomatoes.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>20-30 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" data-action="order">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" data-action="menu">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- BEN FLOWERS Card - NEW (Added below Papa John's and above Supermarket) -->
-    <div class="restaurant-card" data-restaurant="BEN FLOWERS" id="benflowers-card">
-      <div class="image-half">
-        <img src="https://i.ibb.co/VYSX4qJ5/IMG-7465.jpg" alt="BEN FLOWERS - Fresh Flower Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">NEW</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">BEN FLOWERS</h2>
-            <div class="cuisine">Flowers • Gifts • Romance</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 5.0
-          </div>
-        </div>
-
-        <p class="description">Fresh flowers, romantic bouquets, gift boxes with chocolates and bears. Fast delivery in Marrakech</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>25-35 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" id="benflowers-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="benflowers-menu-btn">
-            <i class="fas fa-book-open"></i> View Menu
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Supermarket Card - معدلة لفتح benmarket.html -->
-    <div class="restaurant-card" data-restaurant="Supermarket" id="supermarket-card">
-      <div class="image-half">
-        <img src="https://i.ibb.co/KjGRk7MP/Delivery-marrakech-supermarket.webp" alt="Supermarket Delivery in Marrakech">
-        <div class="image-overlay">
-          <div class="offer-badge">Live Ordering</div>
-        </div>
-      </div>
-      <div class="content-half">
-        <div class="card-header">
-          <div class="title-section">
-            <h2 class="title">Supermarket</h2>
-            <div class="cuisine">Groceries • Household</div>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star"></i> 4.8
-          </div>
-        </div>
-
-        <p class="description">Everything you need from fresh produce to household essentials. We carefully select the finest fruits, vegetables, and pantry staples.</p>
-
-        <div class="delivery-time">
-          <i class="fas fa-clock"></i>
-          <span>30-35 min</span>
-        </div>
-
-        <div class="buttons">
-          <button class="btn btn-order" id="supermarket-order-btn">
-            <i class="fas fa-bolt"></i> Order Now
-          </button>
-          <button class="btn btn-menu" id="supermarket-menu-btn">
-            <i class="fas fa-book-open"></i> View Products
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-
-  <!-- المحتوى الرئيسي -->
-  <div class="container">
-    <h2 class="section-title" style=color:black>DELIVERY IN MARRAKECH</h2>
-
-    <p class="service-text">
-      Our <span class="text-highlight">premium delivery service</span> in Marrakech operates <span class="text-highlight">24/7</span>, offering <span class="text-highlight">fast and reliable</span> delivery from your favorite restaurants including McDonald's, KFC, Pizza, Sushi, seafood, and all kinds of delicious food. We pride ourselves on our <span class="text-highlight">quick response times</span> and attention to detail, ensuring your orders arrive fresh and exactly as requested.
-    </p>
-
-    <p class="service-text">
-      Additionally, we deliver <span class="text-highlight">beautiful flower bouquets</span> for gifts on all occasions, carefully arranged by local florists to convey your heartfelt messages. Our grocery and supermarket delivery service brings <span class="text-highlight">fresh, quality products</span> directly to your doorstep. You can also count on us for <span class="text-highlight">fresh bakery products and sweets</span>, with our service available 24 hours a day, seven days a week.
-    </p>
-
-    <p class="service-text" style=" margin-bottom:1px;">
-      Notre service de livraison à Marrakech fonctionne <span class="text-highlight">24h/24 et 7j/7</span>, offrant une livraison <span class="text-highlight">rapide et fiable</span> depuis vos restaurants préférés tels que McDonald's, KFC, Pizza, Sushi, fruits de mer et toutes sortes de plats délicieux. De plus, nous livrons des <span class="text-highlight">bouquets de fleurs magnifiques</span> pour des cadeaux à toutes les occasions, ainsi que des courses et des articles de supermarché. Vous pouvez également compter sur nous pour des <span class="text-highlight">produits de boulangerie frais et des douceurs</span>, disponibles à tout moment.
-    </p>
-  </div>
-
-  <!-- How It Works Section -->
-  <section class="how-it-works" style="margin-top:1px;">
-    <div class="container">
-      <h2 class="section-title" style=color:black>HOW IT WORKS</h2>
-      <p class="service-text">Ordering through WhatsApp is simple and fast. Follow these easy steps to get your delivery:</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-icon">
-            <i class="fab fa-whatsapp"></i>
-          </div>
-          <div class="step-number">1</div>
-          <h3>Message Us on WhatsApp</h3>
-          <p>Click the WhatsApp button below to start a conversation with us. You can also save our number and message us directly.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-utensils"></i>
-          </div>
-          <div class="step-number">2</div>
-          <h3>Place Your Order</h3>
-          <p>Tell us what you'd like to order from any of our partner restaurants or services. Send us the details of your request.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="step-number">3</div>
-          <h3>Share Your Location</h3>
-          <p>Send us your delivery address or share your location via WhatsApp for accurate and fast delivery.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-icon">
-            <!-- هنا الأيقونة SVG بدل fa-truck -->
-            <svg fill="white" width="40px" height="40px" viewBox="0 0 122.88 122.88" xmlns="http://www.w3.org/2000/svg">
-              <path d="M82.08,7.33h35.4c1.35,0,2.46,1.11,2.46,2.46V30.4h0.24c1.49,0,2.7,1.22,2.7,2.7v3.01 c0,1.51-1.24,2.74-2.74,2.74h-19c14.12,1.26,22.19,14.39,21.31,31.46h-12.56c-0.01,8.23-6.69,14.89-14.92,14.89 c-8.23,0-14.91-6.67-14.92-14.89H41.68c-0.01-0.27-0.02-0.53-0.03-0.8c0.03,1.81-0.08,3.73-0.34,5.78L7.87,59.54L0,55.82 c6.32-7.19,13.94-10.21,23.16-8.13c1.42,0.36,2.76,0.78,4.03,1.26c-1.3-0.5-2.67-0.92-4.11-1.28l10.52-34.65l-4.75-0.09l0,0 c-0.98-0.02-2.04,0.25-2.71-0.23c-1.16-0.03-2.17-0.73-2.87-1.83c-0.63-0.98-1.01-2.32-1.01-3.78c0-1.46,0.39-2.8,1.01-3.78 c0.52-0.81,1.2-1.4,1.98-1.67c0.01-0.16,0.02-0.27,0.04-0.3c1.12-1.79,3.3-1.25,5.24-1.25l1.89,0.12c1.37,0.17,2.71,0.62,4,1.36 l2.16,1.21h1.75l5.88,1.14c1.92,0.37,2.2,0.21,1.75,2.58c-0.06,0.3-0.13,0.6-0.23,0.89c-0.58,1.73-1.04,1.09-2.83,0.72l-5.51-1.14 c0.21,2.22-0.49,4.94-1.48,8.12c3.17,2.68,4.59,6.5,2.43,11.53l-5.26,16.21C43.9,49.08,49.2,54.74,49.5,64.03h11.67 c7.19-5.45,6-15.15-1.89-21.35v-3.82h0v-5.84c0.01-1.85,1-2.68,2.84-2.63h17.5V9.79C79.62,8.44,80.73,7.33,82.08,7.33L82.08,7.33z M90.68,26.67h18.21c0.14,0,0.26,0.12,0.26,0.26v0.52c0,0.14-0.12,0.26-0.26,0.26H90.68c-0.14,0-0.26-0.12-0.26-0.26v-0.52 C90.42,26.79,90.53,26.67,90.68,26.67L90.68,26.67z M100.54,15.35c5.33,0.43,9.19,4.44,8.52,9.72H90.5 c-0.65-5.31,3.22-9.33,8.59-9.72v-1.49h-1.48c-0.15,0-0.27-0.12-0.27-0.27v-0.97c0-0.15,0.12-0.27,0.27-0.27h4.37 c0.15,0,0.27,0.12,0.27,0.27v0.97c0,0.15-0.12,0.27-0.27,0.27h-1.45V15.35L100.54,15.35L100.54,15.35z M7.91,59.56l13.3,6.3 l-4.32-1.98c-2.97,0.63-5.19,3.27-5.19,6.42c0,3.63,2.94,6.57,6.57,6.57c3.63,0,6.57-2.94,6.57-6.57c0-1.12-0.28-2.17-0.77-3.1 l9.08,4.3c-0.61,7.68-7.04,13.72-14.87,13.72c-8.24,0-14.92-6.68-14.92-14.92C3.34,66.08,5.09,62.27,7.91,59.56L7.91,59.56 L7.91,59.56z M25.27,4.2c0.06,1.92,0.19,4.39,0.28,6.05c-0.16-0.14-0.32-0.32-0.46-0.55c-0.42-0.65-0.67-1.58-0.67-2.62 s0.26-1.97,0.67-2.62C25.15,4.37,25.21,4.28,25.27,4.2L25.27,4.2z M88.4,70.32h13.14c-0.01,3.62-2.95,6.54-6.57,6.54 C91.35,76.87,88.41,73.94,88.4,70.32L88.4,70.32L88.4,70.32z"></path>
-            </svg>
-          </div>
-          <div class="step-number">4</div>
-          <h3>Receive Your Delivery</h3>
-          <p>Relax while we prepare and deliver your order right to your doorstep. We'll keep you updated throughout the process.</p>
-        </div>
-      </div>
-  </section>
-
-  <!-- قسم المطاعم التي نتعامل معها - جديد -->
-  <section class="partner-restaurants">
-    <div class="container">
-      <h2 class="section-title" style="color: black; margin-top:2px;">Our Partner Restaurants</h2>
-      <p class="service-text" style="color: #ccc; text-align: center;">We proudly deliver from the best restaurants and services in Marrakech</p>
-
-      <div class="restaurant-logos">
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/tp1gW8Sz/Mcdoanld-s-delivery-marrakech.png" alt="McDonald's">
-        </div>
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/qYwjNDv1/Kfc-delivery-marrakech.png" alt="KFC">
-        </div>
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/svcH0Vpf/Pizza-hut-delivery-marrakech.png" alt="Pizza Hut">
-        </div>
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/nMwLd4dC/IMG-3722.png" alt="Papa John's">
-        </div>
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/LtM2PYFr/IMG-7464.jpg" alt="BEN FLOWERS">
-        </div>
-        <div class="restaurant-logo">
-          <img src="https://i.ibb.co/vvHst0Jj/IMG-3723.png" alt="Supermarket">
+<div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="app">
+  <section class="hero" id="hero">
+    <div class="hero-img" id="himg"><img src="https://images.pexels.com/photos/34100471/pexels-photo-34100471/free-photo-of-van-traveling-through-moroccan-mountain-road.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A private van driving along a mountain road in the Moroccan Atlas" width="1400" height="930" fetchpriority="high" decoding="async" onload="this.classList.add('ok')" onerror="this.remove()"></div>
+    <div class="hero-top">
+      <div class="brand"><span class="logo"><svg class="i"><use href="#car"/></svg></span>Atlas Private Transfers<span class="live"><b></b>Drivers online</span></div>
+      <div class="hero-copy">
+        <h1 id="ttl">Travel Morocco in first-class comfort</h1>
+        <p>Private chauffeurs and premium vehicles, city to city, airport to riad.</p>
+        <div class="trust">
+          <span style="--k:0"><svg class="i"><use href="#shield"/></svg>Fixed price</span>
+          <span style="--k:1"><svg class="i"><use href="#clock"/></svg>On-time pick-up</span>
+          <span style="--k:2"><svg class="i"><use href="#star"/></svg>Licensed drivers</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WhatsApp Help Button -->
-  <div class="whatsapp-float" id="whatsappHelpWidget">
-    <section class="help-panel" id="helpPanel" aria-label="Delivery help" aria-hidden="true">
-      <div class="help-panel-header">
-        <div>
-          <h2 class="help-panel-title">How can we help?</h2>
-          <p class="help-panel-subtitle">Quick answers and menu shortcuts</p>
-        </div>
-        <button class="help-panel-close" id="helpPanelClose" type="button" aria-label="Close help">×</button>
-      </div>
-      <div class="help-panel-body">
-        <div class="help-section-label">Questions</div>
-        <div class="help-question">
-          <button class="help-question-button" type="button" aria-expanded="false">How it works? <i class="fas fa-chevron-down"></i></button>
-          <div class="help-answer"><div class="help-answer-inner">Select your items, send your order via WhatsApp, then share your live location. We’ll get your order to you in a few minutes 😁</div></div>
-        </div>
-        <div class="help-question">
-          <button class="help-question-button" type="button" aria-expanded="false">How can I order? <i class="fas fa-chevron-down"></i></button>
-          <div class="help-answer"><div class="help-answer-inner">Browse the menu → select your items → open your basket → tap “Complete Order via WhatsApp” → share your live location. Your order is confirmed 🎉</div></div>
-        </div>
-        <div class="help-question">
-          <button class="help-question-button" type="button" aria-expanded="false">Can you deliver to my location? <i class="fas fa-chevron-down"></i></button>
-          <div class="help-answer"><div class="help-answer-inner">Our delivery service is available more than 30 km around Marrakech.</div></div>
-        </div>
-        <div class="help-section-label" style="margin-top:17px">Services</div>
-        <div class="help-services">
-          <a class="help-service-link" href="https://delivery-marrakech.com/menumcdo.html"><i class="fas fa-hamburger"></i><span>McDonald’s menu</span><i class="fas fa-arrow-up-right-from-square"></i></a>
-          <a class="help-service-link" href="https://delivery-marrakech.com/kfcmenu.html"><i class="fas fa-drumstick-bite"></i><span>KFC menu</span><i class="fas fa-arrow-up-right-from-square"></i></a>
-          <a class="help-service-link" href="https://delivery-marrakech.com/menupizzahut.html"><i class="fas fa-pizza-slice"></i><span>Pizza Hut menu</span><i class="fas fa-arrow-up-right-from-square"></i></a>
-          <a class="help-service-link" href="https://delivery-marrakech.com/menuzushi.html"><i class="fas fa-fish"></i><span>Sushi menu</span><i class="fas fa-arrow-up-right-from-square"></i></a>
-          <a class="help-service-link" href="https://delivery-marrakech.com/benmarket.html"><i class="fas fa-shopping-basket"></i><span>Supermarket</span><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-      </div>
-    </section>
-    <div class="whatsapp-message" id="whatsappMsg" role="status" aria-live="polite">
-      <span class="whatsapp-message-text" id="whatsappMessageText"></span>
-      <button class="whatsapp-message-close" id="whatsappMessageClose" type="button" aria-label="Dismiss message">×</button>
+  <div class="sentinel" id="sentinel"></div>
+  <nav class="steps" id="steps" aria-label="Booking progress">
+    <div class="sgrid">
+      <div class="track"><div class="fill" id="fill"></div></div>
+      <button type="button" class="st on" aria-label="Step 1: Trip"><span class="dot"></span>Trip</button>
+      <button type="button" class="st" aria-label="Step 2: Vehicle"><span class="dot"></span>Vehicle</button>
+      <button type="button" class="st" aria-label="Step 3: Details"><span class="dot"></span>Details</button>
     </div>
-    <button class="whatsapp-button" id="whatsappBtn" type="button" aria-label="Open WhatsApp help" aria-expanded="false" aria-controls="helpPanel">
-      <img src="https://i.postimg.cc/3W5Bw2hp/IMG-1812.png" alt="">
-    </button>
+    <div class="cap"><span class="sw-t" id="stepTxt">Step 1 of 3</span><span><b id="pct">33%</b> complete</span></div>
+  </nav>
+
+  <form id="f" class="card" novalidate>
+    <div class="stage" id="stage">
+    <div class="step show" data-step="0">
+      <h2>Where are you going?</h2>
+      <p class="hint">Tell us your route and when you’d like to travel.</p>
+      <div class="seg" id="seg">
+        <label><input type="radio" name="type" value="One way" checked><span><svg class="i"><use href="#route"/></svg>One way</span></label>
+        <label><input type="radio" name="type" value="Round trip"><span><svg class="i"><use href="#swap"/></svg>Round trip</span></label>
+      </div>
+      <div class="route">
+        <div id="bf"><label class="l" for="from">From</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="from" list="cities" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a pick-up city</div></div>
+        <button type="button" class="swap" id="swap" aria-label="Swap locations"><svg class="i"><use href="#swap"/></svg></button>
+        <div id="bt"><label class="l" for="to">To</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="to" list="cities" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a destination</div></div>
+      </div>
+      <div class="quick rise" aria-label="Popular places"><span>Popular</span>
+        <button type="button" data-v="Marrakech Airport (RAK)">Marrakech Airport</button><button type="button" data-v="Casablanca Airport (CMN)">Casablanca Airport</button><button type="button" data-v="Marrakech">Marrakech</button><button type="button" data-v="Fes">Fes</button><button type="button" data-v="Tangier">Tangier</button><button type="button" data-v="Agadir">Agadir</button><button type="button" data-v="Essaouira">Essaouira</button><button type="button" data-v="Merzouga">Merzouga</button><button type="button" data-v="Chefchaouen">Chefchaouen</button>
+      </div>
+      <div class="grid">
+        <div><label class="l" for="date">Date</label><div class="fi"><svg class="i"><use href="#cal"/></svg><input type="date" id="date" required></div><div class="mini"><button type="button" data-add="0">Today</button><button type="button" data-add="1">Tomorrow</button></div><div class="err">Pick a date</div></div>
+        <div><label class="l" for="time">Pick-up time</label><div class="fi"><svg class="i"><use href="#clock"/></svg><input type="time" id="time" required></div><div class="err">Pick a time</div></div>
+        <div class="rt"><label class="l" for="rdate">Return date</label><div class="fi"><svg class="i"><use href="#cal"/></svg><input type="date" id="rdate"></div><div class="err">Pick a return date</div></div>
+        <div class="rt"><label class="l" for="rtime">Return time</label><div class="fi"><svg class="i"><use href="#clock"/></svg><input type="time" id="rtime"></div><div class="err">Pick a return time</div></div>
+        <div class="full"><label class="l" for="flight">Flight number <span class="opt">(optional)</span></label><div class="fi"><svg class="i"><use href="#plane"/></svg><input id="flight" placeholder="e.g. AT 801" autocapitalize="characters"></div></div>
+      </div>
+    </div>
+
+    <div class="step" data-step="1">
+      <h2>Guests &amp; vehicle</h2>
+      <p class="hint">Pick the ride that fits your group.</p>
+      <div class="grid">
+        <div class="ctr" data-c="adults" data-min="1"><span class="ic"><svg class="i"><use href="#user"/></svg></span><span class="t">Adults<small>12+ years</small></span><button type="button" data-d="-1" aria-label="Fewer adults"><svg class="i"><use href="#minus"/></svg></button><output>1</output><button type="button" data-d="1" aria-label="More adults"><svg class="i"><use href="#plus"/></svg></button></div>
+        <div class="ctr" data-c="kids" data-min="0"><span class="ic"><svg class="i"><use href="#smile"/></svg></span><span class="t">Children<small>Under 12</small></span><button type="button" data-d="-1" aria-label="Fewer children"><svg class="i"><use href="#minus"/></svg></button><output>0</output><button type="button" data-d="1" aria-label="More children"><svg class="i"><use href="#plus"/></svg></button></div>
+        <div class="ctr full" data-c="bags" data-min="0"><span class="ic"><svg class="i"><use href="#bag"/></svg></span><span class="t">Luggage<small>Suitcases &amp; large bags</small></span><button type="button" data-d="-1" aria-label="Fewer bags"><svg class="i"><use href="#minus"/></svg></button><output>1</output><button type="button" data-d="1" aria-label="More bags"><svg class="i"><use href="#plus"/></svg></button></div>
+      </div>
+
+      <div class="sub">Choose your vehicle</div>
+      <p class="pnote" id="pnote"></p>
+      <div class="cars">
+        <label class="car">
+          <input type="radio" name="car" data-cap="5" data-price="350" data-unit="Dh" value="Mini Van (up to 5 guests)" checked>
+          <span class="vi" aria-hidden="true"><!-- Photo slot: replace this span with <img src="YOUR_PHOTO_URL" alt="Mini Van"> --></span>
+          <span class="ci"><b>Mini Van</b><small>Spacious comfort for families and small groups</small><span class="feat"><span>Up to 5 guests</span><span>5 bags</span></span></span>
+          <span class="pr"></span>
+          <span class="tick"><svg class="i"><use href="#check"/></svg></span>
+        </label>
+        <label class="car">
+          <input type="radio" name="car" data-cap="3" data-price="750" data-unit="Dh" value="Private Luxury Car (up to 3 guests)">
+          <span class="vi" aria-hidden="true"><!-- Photo slot: replace with <img src="YOUR_PHOTO_URL" alt="Private Luxury Car"> --></span>
+          <span class="ci"><b>Private Luxury Car</b><small>Private, executive comfort for couples and business travel</small><span class="feat"><span>Up to 3 guests</span><span>2 large + 1 small bag</span></span></span>
+          <span class="pr"></span>
+          <span class="tick"><svg class="i"><use href="#check"/></svg></span>
+        </label>
+        <label class="car">
+          <input type="radio" name="car" data-cap="15" data-price="1000" data-unit="Dh / group" value="Luxury Van (up to 15 guests)">
+          <span class="vi" aria-hidden="true"><!-- Photo slot: replace with <img src="YOUR_PHOTO_URL" alt="Luxury Van"> --></span>
+          <span class="ci"><b>Luxury Van</b><small>Ideal for large groups, events and celebrations</small><span class="feat"><span>Up to 15 guests</span><span>Price per group</span></span></span>
+          <span class="pr"></span>
+          <span class="tick"><svg class="i"><use href="#check"/></svg></span>
+        </label>
+      </div>
+
+      <div class="sub">Included in your price</div>
+      <div class="incl">
+        <span><svg class="i"><use href="#check"/></svg>Wi-Fi</span>
+        <span><svg class="i"><use href="#check"/></svg>Water &amp; snacks</span>
+        <span><svg class="i"><use href="#check"/></svg>Air conditioning</span>
+      </div>
+    </div>
+
+    <div class="step" data-step="2">
+      <h2>Your details</h2>
+      <p class="hint">We’ll confirm your price and driver on WhatsApp.</p>
+      <div class="grid">
+        <div class="full"><label class="l" for="name">Full name</label><div class="fi"><svg class="i"><use href="#user"/></svg><input id="name" placeholder="As on your passport" autocomplete="name" required></div><div class="err">Enter your name</div></div>
+        <div><label class="l" for="phone">Phone / WhatsApp</label><div class="fi"><svg class="i"><use href="#phone"/></svg><input id="phone" type="tel" inputmode="tel" placeholder="+44 7700 900123" autocomplete="tel" required></div><div class="err">Add a number with country code</div></div>
+        <div><label class="l" for="mail">Email <span class="opt">(optional)</span></label><div class="fi"><svg class="i"><use href="#mail"/></svg><input id="mail" type="email" inputmode="email" placeholder="you@email.com" autocomplete="email"></div></div>
+        <div class="full"><label class="l" for="notes">Notes <span class="opt">(optional)</span></label><div class="fi ta"><svg class="i"><use href="#note"/></svg><textarea id="notes" placeholder="Anything we should know?"></textarea></div></div>
+      </div>
+      <div class="sum" id="sum" aria-live="polite"></div>
+    </div>
+
+    </div>
+
+    <div class="nav">
+      <button type="button" class="btn back" id="back" aria-label="Back" hidden><svg class="i"><use href="#back"/></svg></button>
+      <button type="button" class="btn next" id="next"></button>
+    </div>
+  </form>
+  <p class="foot">Your details are only used to arrange your transfer.</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="done" id="done" role="status">
+  <canvas id="cv"></canvas>
+  <div style="position:relative">
+    <div class="okc"></div>
+    <h2>Request ready!</h2>
+    <p>Opening WhatsApp to send it to our team…</p>
+    <div class="bar"><i></i></div>
   </div>
+</div>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-  </div>
+<datalist id="cities">
+<option value="Casablanca Airport (CMN)"><option value="Marrakech Airport (RAK)"><option value="Fes Airport (FEZ)"><option value="Tangier Airport (TNG)"><option value="Agadir Airport (AGA)"><option value="Rabat"><option value="Casablanca"><option value="Marrakech"><option value="Fes"><option value="Tangier"><option value="Agadir"><option value="Essaouira"><option value="Chefchaouen"><option value="Merzouga"><option value="Ouarzazate"><option value="Meknes"><option value="Tetouan"><option value="Oujda"><option value="Dakhla"><option value="Ifrane"><option value="El Jadida"><option value="Taghazout">
+</datalist>
+<script>
+/* Set your WhatsApp number: international format, digits only (no + or 00) */
+const WHATSAPP_NUMBER = "212600000000";
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h2>Delivery Marrakech</h2>
-        <p>
-          Fast & reliable delivery in Marrakech. From food and groceries and flowers — we bring it all to your doorstep 24/7.
-        </p>
-        <p>Your trusted partner for all delivery needs in the Red City.</p>
-      </div>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const icon=n=>`<svg class="i"><use href="#${n}"/></svg>`;
+const v=id=>$("#"+id).value.trim();
+const round=()=>$('input[name=type]:checked').value==="Round trip";
+const cnt=c=>$(`[data-c=${c}] output`).textContent;
+const esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const buzz=(ms=12)=>{try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}};
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,x){try{localStorage.setItem(k,x)}catch(e){}}};
 
-      <div class="footer-section">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="#"><i class="fas fa-hamburger"></i> Food Delivery</a></li>
-          <li><a href="#"><i class="fas fa-shopping-cart"></i> Supermarket</a></li>
-          <li><a href="#"><i class="fas fa-gift"></i> Flowers</a></li>
-          <li><a href="#"><i class="fas fa-ellipsis-h"></i> Much More</a></li>
-        </ul>
-      </div>
+const steps=$$(".step"), sts=$$(".st"), stage=$("#stage");
+const dotIcons=["route","car","user"], names=["Trip details","Vehicle & extras","Your details"];
+let cur=0, busy=false;
 
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="aboutus.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-          <li><a href="#"><i class="fas fa-tag"></i> Pricing</a></li>
-          <li><a href="https://wa.me/212642620325?text=Hello, i have a question please "><i class="fas fa-question-circle"></i> FAQ</a></li>
-          <li><a href="#"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Us</h3>
+/* ---- Marrakech-only pricing ---- */
+const isMK=s=>/marrakech|marrakesh|\brak\b|مراكش/i.test(s||"");
+const onMK=()=>isMK(v("from"))&&isMK(v("to"));
+function updatePrices(){
+  const mk=onMK();
+  $$(".car").forEach(c=>{
+    const i=c.querySelector("input"), p=c.querySelector(".pr");
+    p.innerHTML = mk ? `<b>${i.dataset.price}</b><small>${i.dataset.unit}</small>` : `<small class="rq">On request</small>`;
+  });
+  $("#pnote").textContent = mk
+    ? "Fixed rates for transfers within Marrakech."
+    : "Rates apply to transfers within Marrakech. For other routes, we’ll send you a quote on WhatsApp.";
+}
+const priceText=()=>{
+  const i=$('input[name=car]:checked');
+  return onMK() ? `${i.dataset.price} ${i.dataset.unit}` : "To be quoted";
+};
 
-        <ul>
-          <p><i class="fas fa-map-marker-alt"></i>&nbsp;<span>Marrakech, Morocco</span></p>
-          <p><i class="fas fa-phone"></i>&nbsp;<a href="tel:+212642620325" style=color:white;>+212 642 620 325</a></p>
-          <p><i class="fab fa-whatsapp"></i>&nbsp;<a href="https://wa.me/212642620325" target="_blank" style=color:white;>Chat on WhatsApp</a></p>
-          <p><i class="fas fa-envelope"></i>&nbsp;<a href="mailto:support@delivery-marrakech.com" style=color:white;>support@delivery-marrakech.com</a></p>
+/* ---- hero title reveal + parallax ---- */
+$("#ttl").innerHTML=$("#ttl").textContent.split(" ").map((w,i)=>`<span class="w" style="--w:${i}">${w}</span>`).join(" ");
+if(!reduce){
+  let tick=false; const hi=$("#himg");
+  addEventListener("scroll",()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{hi.style.transform=`translateY(${Math.min(scrollY,600)*.16}px)`;tick=false})},{passive:true});
+}
+/* ---- sticky stepper shadow ---- */
+new IntersectionObserver(([e])=>$("#steps").classList.toggle("stuck",!e.isIntersecting),{rootMargin:"-8px 0px 0px 0px"}).observe($("#sentinel"));
 
-          <div style="margin-top: 20px;">
-            <h3>Follow Us</h3>
-            <div style="display: flex; gap: 15px; margin-top: 10px;">
-              <a href="https://www.facebook.com/livreur.marrakech" target="_blank" style="font-size: 1.5rem; color: white;">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/livreur.marrakech_24h/" target="_blank" style="font-size: 1.5rem; color: white;">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://twitter.com/livreur_marrakech" target="_blank" style="font-size: 1.5rem; color: white;">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-      </div>
-    </div>
+/* ---- toast ---- */
+let tt; function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),2800)}
 
-    <div class="footer-bottom">
-      &copy; 2025 Delivery Marrakech. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #8B0000;"></i> in Marrakech
-    </div>
-  </footer>
+/* ---- stagger children ---- */
+function stagger(el){
+  el.querySelectorAll("h2,.hint,.seg,.route,.quick,.grid>*,.sub,.pnote,.cars>*,.incl,.sum").forEach((e,i)=>{e.classList.add("rise");e.style.setProperty("--d",Math.min(i,16))});
+}
+stagger(steps[0]);
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 1. إدارة القائمة المتنقلة
-      function toggleMenu() {
-        const menu = document.getElementById('megaMenu');
-        const button = document.getElementById('menuButton');
-        button.classList.toggle('active');
-        menu.classList.toggle('show');
-        if (menu.classList.contains('show')) {
-          document.body.style.overflow = 'hidden';
-          document.body.style.position = 'relative';
-        } else {
-          document.body.style.overflow = '';
-          document.body.style.position = '';
-        }
-      }
-      document.getElementById('menuButton').addEventListener('click', toggleMenu);
-      // 2. تأثير الظهور للنصوص عند التمرير
-      const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.service-text, .restaurant-card, .step, .restaurant-logo');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        });
-        elements.forEach(el => {
-          observer.observe(el);
-        });
-      }
-      setTimeout(animateOnScroll, 500);
-      // 3. WhatsApp Help Widget
-      const helpWidget = document.getElementById('whatsappHelpWidget');
-      const helpPanel = document.getElementById('helpPanel');
-      const helpButton = document.getElementById('whatsappBtn');
-      const helpPanelClose = document.getElementById('helpPanelClose');
-      const welcomeMessage = document.getElementById('whatsappMsg');
-      const welcomeText = document.getElementById('whatsappMessageText');
-      const welcomeClose = document.getElementById('whatsappMessageClose');
-      let welcomeHideTimer;
-      let typingTimer;
+/* ---- stepper ---- */
+function dots(n){
+  sts.forEach((s,i)=>{
+    s.classList.toggle("on",i===n); s.classList.toggle("done",i<n);
+    s.setAttribute("aria-current",i===n?"step":"false");
+    const d=s.querySelector(".dot"), want=i<n?"check":dotIcons[i];
+    if(d.dataset.w!==want){d.innerHTML=icon(want);d.dataset.w=want;d.classList.remove("pop");void d.offsetWidth;d.classList.add("pop")}
+  });
+  $("#fill").style.width=(n/2*100)+"%";
+  const t=$("#stepTxt");t.classList.remove("sw-t");void t.offsetWidth;t.classList.add("sw-t");
+  t.textContent=`Step ${n+1} of 3 · ${names[n]}`;
+  $("#pct").textContent=Math.round((n+1)/3*100)+"%";
+}
+sts.forEach((s,i)=>s.addEventListener("click",()=>{if(i<cur){buzz();show(i)}}));
 
-      function closeHelpPanel() {
-        helpPanel.classList.remove('is-open');
-        helpPanel.setAttribute('aria-hidden', 'true');
-        helpButton.setAttribute('aria-expanded', 'false');
-      }
-      function openHelpPanel() {
-        welcomeMessage.classList.remove('show-message');
-        helpPanel.classList.add('is-open');
-        helpPanel.setAttribute('aria-hidden', 'false');
-        helpButton.setAttribute('aria-expanded', 'true');
-      }
-      helpButton.addEventListener('click', function() {
-        if (helpPanel.classList.contains('is-open')) closeHelpPanel();
-        else openHelpPanel();
-      });
-      helpPanelClose.addEventListener('click', closeHelpPanel);
-      welcomeClose.addEventListener('click', function(event) {
-        event.stopPropagation();
-        clearTimeout(welcomeHideTimer);
-        clearInterval(typingTimer);
-        welcomeMessage.classList.remove('show-message');
-      });
-      document.addEventListener('click', function(event) {
-        if (!helpWidget.contains(event.target)) closeHelpPanel();
-      });
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') closeHelpPanel();
-      });
+function btnLabel(n){
+  const nx=$("#next"), last=n===2;
+  nx.classList.toggle("wa",last);
+  nx.innerHTML=last?`<svg class="i" style="fill:currentColor;stroke:none;width:22px;height:22px"><use href="#wa"/></svg><span>Send on WhatsApp</span>`:`<span>Continue</span><svg class="i arr" style="transform:scaleX(-1)"><use href="#back"/></svg>`;
+}
 
-      // Show a brief typewriter invitation after the visitor has been on the page for 10 seconds.
-      setTimeout(function() {
-        if (helpPanel.classList.contains('is-open')) return;
-        const invitation = 'Click here if you need Help';
-        let index = 0;
-        welcomeText.textContent = '';
-        welcomeMessage.classList.add('show-message');
-        typingTimer = setInterval(function() {
-          welcomeText.textContent += invitation.charAt(index++);
-          if (index >= invitation.length) clearInterval(typingTimer);
-        }, 48);
-        welcomeHideTimer = setTimeout(function() {
-          welcomeMessage.classList.remove('show-message');
-        }, 5000);
-      }, 10000);
+/* ---- smooth step transition: cross-fade + animated height ---- */
+function show(n){
+  if(n===cur||busy)return;
+  busy=true;
+  const dir=n>cur?"r":"l", o=steps[cur], nw=steps[n];
+  stage.style.height=o.offsetHeight+"px";
+  if(n===2)summary();
+  stagger(nw);
+  o.classList.add("abs","out-"+dir);
+  nw.classList.add("show","abs","in-"+dir);
+  void stage.offsetHeight;
+  stage.style.height=nw.offsetHeight+"px";
+  cur=n; dots(n); btnLabel(n); $("#back").hidden=n===0;
+  const top=$("#f").getBoundingClientRect().top+scrollY-($("#steps").offsetHeight+24);
+  scrollTo({top:Math.max(0,top),behavior:reduce?"auto":"smooth"});
+  setTimeout(()=>{
+    o.classList.remove("show","abs","out-"+dir);
+    nw.classList.remove("abs","in-"+dir);
+    stage.style.height="";
+    busy=false;
+    const h=nw.querySelector("h2"); h.tabIndex=-1; h.focus({preventScroll:true});
+  },reduce?0:580);
+}
+dots(0); btnLabel(0);
+$$(".step h2").forEach(h=>h.tabIndex=-1);
 
-      document.querySelectorAll('.help-question-button').forEach(function(questionButton) {
-        questionButton.addEventListener('click', function() {
-          const question = questionButton.closest('.help-question');
-          const answer = question.querySelector('.help-answer');
-          const isOpen = question.classList.contains('is-active');
-          document.querySelectorAll('.help-question.is-active').forEach(function(openQuestion) {
-            openQuestion.classList.remove('is-active');
-            openQuestion.querySelector('.help-question-button').setAttribute('aria-expanded', 'false');
-            openQuestion.querySelector('.help-answer').style.maxHeight = '0px';
-          });
-          if (!isOpen) {
-            question.classList.add('is-active');
-            questionButton.setAttribute('aria-expanded', 'true');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-          }
-        });
-      });
-      // 4. إضافة وظائف الأزرار والبطاقات
+/* ---- validation ---- */
+function check(ids){
+  let first=null;
+  ids.forEach(id=>{
+    const el=$("#"+id), box=el.closest(".fi");
+    let ok=!!el.value.trim();
+    if(ok&&id==="phone")ok=el.value.replace(/\D/g,"").length>=8;
+    box.classList.remove("bad"); void box.offsetWidth; box.classList.toggle("bad",!ok);
+    if(!ok&&!first)first=el;
+  });
+  if(first){buzz([30,40,30]);first.scrollIntoView({behavior:"smooth",block:"center"});first.focus({preventScroll:true});toast("Please complete the highlighted field")}
+  return !first;
+}
+/* Included in every transfer (static, no selection) */
+const incl=()=>["Wi-Fi","Water & snacks","Air conditioning"];
 
-      function openWhatsApp(message) {
-        const phoneNumber = '212642620325';
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        window.open(whatsappUrl, '_blank');
-      }
-      
-      function openMenuFlowersPage() {
-        window.location.href = 'menuflowers.html';
-      }
-      
-      // =============================================
-      // التعديلات الخاصة ببطاقة Supermarket (المطلوبة)
-      // =============================================
-      function openSupermarketPage() {
-          window.location.href = 'benmarket.html';
-      }
+function summary(){
+  const x=incl().join(", ");
+  const rows=[
+    ["cal","Outbound",`${v("date")} · ${v("time")}`],
+    round()&&["swap","Return",`${v("rdate")} · ${v("rtime")}`],
+    v("flight")&&["plane","Flight",v("flight")],
+    ["user","Guests",`${cnt("adults")} adults, ${cnt("kids")} children, ${cnt("bags")} bags`],
+    ["car","Vehicle",$('input[name=car]:checked').value],
+    ["star","Price",priceText()],
+    ["check","Included",x]
+  ].filter(Boolean);
+  $("#sum").innerHTML=`<h3>${icon("shield")}Booking summary</h3>
+  <div class="path"><i></i><em>${esc(v("from"))}</em><span class="ln"></span><em style="text-align:right">${esc(v("to"))}</em><i class="b"></i></div>`+
+  rows.map((r,i)=>`<div class="row" style="--d:${i}">${icon(r[0])}<span>${r[1]}</span><b>${esc(r[2])}</b></div>`).join("");
+}
 
-      const supermarketCard = document.getElementById('supermarket-card');
-      const supermarketOrderBtn = document.getElementById('supermarket-order-btn');
-      const supermarketMenuBtn = document.getElementById('supermarket-menu-btn');
+/* ---- confetti ---- */
+function confetti(){
+  const cv=$("#cv"),c=cv.getContext("2d"),dpr=devicePixelRatio||1,W=cv.width=innerWidth*dpr,H=cv.height=innerHeight*dpr;
+  const cols=["#c0922f","#e6c273","#1a6a5d","#25d366","#ffffff","#0f3d36"];
+  const ps=Array.from({length:120},()=>({x:W/2,y:H*.42,vx:(Math.random()-.5)*17*dpr,vy:(-Math.random()*17-5)*dpr,s:(Math.random()*7+4)*dpr,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[Math.random()*cols.length|0]}));
+  let t=0;(function f(){
+    c.clearRect(0,0,W,H);
+    ps.forEach(p=>{p.vy+=.45*dpr;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});
+    if(++t<120)requestAnimationFrame(f);else c.clearRect(0,0,W,H);
+  })();
+}
 
-      if (supermarketOrderBtn) {
-          supermarketOrderBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openSupermarketPage();
-          });
-      }
+/* ---- send to WhatsApp ---- */
+function send(){
+  const opt=(k,val)=>val?`*${k}:* ${val}`:null;
+  const L=[
+    "🚘 *NEW TRANSFER REQUEST*","",
+    opt("Trip",$('input[name=type]:checked').value),
+    opt("Route",`${v("from")} ➜ ${v("to")}`),
+    opt("Date",`${v("date")} at ${v("time")}`),
+    round()?opt("Return",`${v("rdate")} at ${v("rtime")}`):null,
+    opt("Flight",v("flight")),
+    opt("Guests",`${cnt("adults")} adults, ${cnt("kids")} children`),
+    opt("Luggage",cnt("bags")),
+    opt("Vehicle",$('input[name=car]:checked').value),
+    opt("Price",priceText()),
+    opt("Included",incl().join(", ")),"",
+    opt("Name",v("name")), opt("Phone",v("phone")),
+    opt("Email",v("mail")), opt("Notes",v("notes"))
+  ].filter(l=>l!==null);
+  const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(L.join("\n"));
+  $("#done").classList.add("on"); buzz([20,30,60]);
+  if(!reduce)confetti();
+  setTimeout(()=>{location.href=url; setTimeout(()=>$("#done").classList.remove("on"),1500)},reduce?300:1500);
+}
 
-      if (supermarketMenuBtn) {
-          supermarketMenuBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openSupermarketPage();
-          });
-      }
+/* ---- navigation ---- */
+$("#next").onclick=()=>{
+  if(busy)return;
+  if(cur===0){ if(!check(["from","to","date","time"].concat(round()?["rdate","rtime"]:[])))return; buzz(); show(1)}
+  else if(cur===1){buzz();show(2)}
+  else if(check(["name","phone"])) send();
+};
+$("#back").onclick=()=>{buzz();show(cur-1)};
+$("#f").addEventListener("submit",e=>{e.preventDefault();$("#next").click()});
 
-      if (supermarketCard) {
-          supermarketCard.addEventListener('click', function(e) {
-              if (!e.target.closest('.btn')) {
-                  openSupermarketPage();
-              }
-          });
-      }
+/* ---- trip type ---- */
+$$('input[name=type]').forEach(r=>r.onchange=()=>{
+  $("#seg").classList.toggle("r",round()); buzz(8);
+  $$(".rt").forEach((e,i)=>{e.classList.toggle("show",round());if(round()){e.classList.add("rise");e.style.setProperty("--d",i);e.style.animation="none";void e.offsetWidth;e.style.animation=""}});
+});
 
-      // =============================================
-      // التعديلات الخاصة ببطاقة McDonald's (كما كانت)
-      // =============================================
-      document.getElementById('mcdonalds-order-btn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        window.location.href = 'menumcdo.html';
-      });
-      document.getElementById('mcdonalds-menu-btn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        window.location.href = 'menumcdo.html';
-      });
-      document.getElementById('mcdonalds-card').addEventListener('click', function(e) {
-        if (!e.target.closest('.btn')) {
-          window.location.href = 'menumcdo.html';
-        }
-      });
-      
-      // =============================================
-      // التعديلات الجديدة لبطاقة KFC (المطلوبة)
-      // =============================================
-      const kfcCard = document.getElementById('kfc-card');
-      const kfcOrderBtn = document.getElementById('kfc-order-btn');
-      const kfcMenuBtn = document.getElementById('kfc-menu-btn');
+/* ---- swap ---- */
+$("#swap").onclick=()=>{
+  const a=$("#from"),b=$("#to");
+  $("#swap").classList.toggle("spin"); buzz();
+  [$("#bf"),$("#bt")].forEach(e=>{e.classList.remove("flip");void e.offsetWidth;e.classList.add("flip")});
+  setTimeout(()=>{[a.value,b.value]=[b.value,a.value]; updatePrices()},180);
+};
 
-      // دالة مساعدة لفتح صفحة KFC
-      function openKFCPage() {
-          window.location.href = 'kfcmenu.html';
-      }
+/* ---- popular places quick-pick ---- */
+let lf=$("#from");
+["from","to"].forEach(id=>$("#"+id).addEventListener("focus",e=>lf=e.target));
+$$(".quick button").forEach(b=>b.onclick=()=>{
+  const f=$("#from"),t=$("#to");
+  const tg=!f.value?f:(!t.value?t:lf);
+  const other=tg===f?t:f;
+  if(other.value===b.dataset.v){toast("Pick-up and destination can’t be the same");buzz([20,30,20]);return}
+  tg.value=b.dataset.v; tg.closest(".fi").classList.remove("bad");
+  tg.classList.remove("pulse");void tg.offsetWidth;tg.classList.add("pulse"); buzz(8);
+  updatePrices();
+});
+["from","to"].forEach(id=>{const el=$("#"+id);["input","change"].forEach(ev=>el.addEventListener(ev,updatePrices))});
 
-      // عند الضغط على زر Order Now
-      if (kfcOrderBtn) {
-          kfcOrderBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openKFCPage();
-          });
-      }
+/* ---- date shortcuts ---- */
+const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+$$(".mini button").forEach(b=>b.onclick=()=>{
+  const d=new Date(); d.setDate(d.getDate()+ +b.dataset.add);
+  const el=$("#date"); el.value=iso(d); el.closest(".fi").classList.remove("bad");
+  el.classList.remove("pulse");void el.offsetWidth;el.classList.add("pulse"); el.dispatchEvent(new Event("change")); buzz(8);
+});
+const today=iso(new Date());
+$("#date").min=today; $("#rdate").min=today;
+$("#date").addEventListener("change",()=>{
+  $("#rdate").min=$("#date").value||today;
+  if($("#rdate").value&&$("#rdate").value<$("#date").value)$("#rdate").value=$("#date").value;
+});
 
-      // عند الضغط على زر View Menu
-      if (kfcMenuBtn) {
-          kfcMenuBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openKFCPage();
-          });
-      }
+/* ---- counters + vehicle capacity ---- */
+const carIn=$$('input[name=car]');
+function fitCars(){
+  const pax=+cnt("adults")+ +cnt("kids");
+  carIn.forEach(c=>c.disabled=+c.dataset.cap<pax);
+  const sel=$('input[name=car]:checked');
+  if(sel&&sel.disabled){
+    const best=carIn.filter(c=>!c.disabled).sort((a,b)=>a.dataset.cap-b.dataset.cap)[0];
+    if(best){best.checked=true;toast(`Switched to ${best.value.split(" (")[0]} for ${pax} guests`)}
+    else toast("For groups over 15, add details in Notes");
+  }
+}
+$$(".ctr").forEach(c=>c.onclick=e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  const o=c.querySelector("output"), n=Math.max(+c.dataset.min,Math.min(30,+o.textContent+ +b.dataset.d));
+  if(n===+o.textContent){buzz([10,20,10]);return}
+  o.textContent=n; o.classList.remove("bump"); void o.offsetWidth; o.classList.add("bump"); buzz(8);
+  fitCars();
+});
 
-      // عند الضغط على بطاقة KFC نفسها
-      if (kfcCard) {
-          kfcCard.addEventListener('click', function(e) {
-              if (!e.target.closest('.btn')) {
-                  openKFCPage();
-              }
-          });
-      }
-      
-      // =============================================
-      // التعديلات الجديدة لبطاقة Pizza Hut
-      // =============================================
-      document.getElementById('pizzahut-order-btn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        window.location.href = 'menupizzahut.html';
-      });
-      
-      document.getElementById('pizzahut-menu-btn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        window.location.href = 'menupizzahut.html';
-      });
-      
-      document.getElementById('pizzahut-card').addEventListener('click', function(e) {
-        if (!e.target.closest('.btn')) {
-          window.location.href = 'menupizzahut.html';
-        }
-      });
-      
-      // =============================================
-      // إضافة وظائف لبطاقة Zushi LAB (تفتح menuzushi.html)
-      // =============================================
-      const zushiCard = document.getElementById('zushi-card');
-      const zushiOrderBtn = document.getElementById('zushi-order-btn');
-      const zushiMenuBtn = document.getElementById('zushi-menu-btn');
+/* ---- ripple on buttons ---- */
+$$(".btn").forEach(b=>b.addEventListener("pointerdown",e=>{
+  const bb=b.getBoundingClientRect(), r=document.createElement("span"), d=Math.max(bb.width,bb.height);
+  r.className="rip"; r.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-bb.left-d/2}px;top:${e.clientY-bb.top-d/2}px`;
+  b.appendChild(r); setTimeout(()=>r.remove(),600);
+}));
 
-      function openZushiPage() {
-          window.location.href = 'menuzushi.html';
-      }
+/* ---- 3D tilt on vehicle cards (mouse only) ---- */
+if(matchMedia("(hover:hover)").matches&&!reduce)$$(".car").forEach(c=>{
+  c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`rotateX(${-y*8}deg) rotateY(${x*10}deg) translateZ(6px)`});
+  c.addEventListener("pointerleave",()=>c.style.transform="");
+});
 
-      if (zushiOrderBtn) {
-          zushiOrderBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openZushiPage();
-          });
-      }
+/* ---- clear errors while typing + remember contact ---- */
+$$("input").forEach(i=>i.addEventListener("input",()=>{const f=i.closest(".fi");f&&f.classList.remove("bad")}));
+["name","phone","mail"].forEach(id=>{const el=$("#"+id),k="atlas_"+id;const sv=store.get(k);if(sv)el.value=sv;el.addEventListener("input",()=>store.set(k,el.value))});
 
-      if (zushiMenuBtn) {
-          zushiMenuBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openZushiPage();
-          });
-      }
-
-      if (zushiCard) {
-          zushiCard.addEventListener('click', function(e) {
-              if (!e.target.closest('.btn')) {
-                  openZushiPage();
-              }
-          });
-      }
-      
-      // =============================================
-      // إضافة وظائف جديدة لبطاقة BEN FLOWERS (تفتح menuflowers.html)
-      // =============================================
-      const benflowersCard = document.getElementById('benflowers-card');
-      const benflowersOrderBtn = document.getElementById('benflowers-order-btn');
-      const benflowersMenuBtn = document.getElementById('benflowers-menu-btn');
-
-      if (benflowersOrderBtn) {
-          benflowersOrderBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openMenuFlowersPage();
-          });
-      }
-
-      if (benflowersMenuBtn) {
-          benflowersMenuBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              openMenuFlowersPage();
-          });
-      }
-
-      if (benflowersCard) {
-          benflowersCard.addEventListener('click', function(e) {
-              if (!e.target.closest('.btn')) {
-                  openMenuFlowersPage();
-              }
-          });
-      }
-      
-      // باقي البطاقات (عدا المعالجات الخاصة) تبقى كما هي (تفتح واتساب)
-      document.querySelectorAll('.restaurant-card:not(#mcdonalds-card):not(#kfc-card):not(#pizzahut-card):not(#zushi-card):not(#benflowers-card):not(#supermarket-card) .btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const restaurant = this.closest('.restaurant-card').dataset.restaurant;
-          const action = this.dataset.action;
-          
-          let message = '';
-          if (action === 'order') {
-            message = `Hello, I would like to order ${restaurant} now, please`;
-          } else if (action === 'menu') {
-            message = `Hi, I'd like to place an order. Can you send me the ${restaurant} menu? please`;
-          }
-          openWhatsApp(message);
-        });
-      });
-      
-      // النقر على بطاقات المطاعم الأخرى
-      document.querySelectorAll('.restaurant-card:not(#mcdonalds-card):not(#kfc-card):not(#pizzahut-card):not(#zushi-card):not(#benflowers-card):not(#supermarket-card)').forEach(card => {
-        card.addEventListener('click', function(e) {
-          if (!e.target.closest('.btn')) {
-            const restaurant = this.dataset.restaurant;
-            const message = `Hello, I would like to order ${restaurant} now, please`;
-            openWhatsApp(message);
-          }
-        });
-      });
-      
-      // 5. Header scroll effect
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-      // 6. Back to top button
-      const backToTopBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
-        }
-      });
-      backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-
-      
-        // تحميل شاشة التحميل من ملف منفصل
-        fetch('loader.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('loader-container').innerHTML = data;
-                
-                // بعد تحميل شاشة التحميل، تشغيل كود الإخفاء
-                setTimeout(function() {
-                    const loadingScreen = document.getElementById('loading-screen');
-                    if (loadingScreen) {
-                        loadingScreen.style.opacity = '0';
-                        loadingScreen.style.transition = 'opacity 0.5s ease';
-                        
-                        setTimeout(function() {
-                            loadingScreen.style.display = 'none';
-                        }, 500);
-                    }
-                }, 3000);
-            })
-            .catch(error => {
-                console.log('Error loading loader:', error);
-                document.getElementById('loader-container').style.display = 'none';
-            });
-      // 7. Language switch functionality
-      const languageBtns = document.querySelectorAll('.language-btn');
-      languageBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          languageBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-    });
-  </script>
-
+/* ---- initial price render ---- */
+updatePrices();
+</script>
 </body>
-
 </html>
