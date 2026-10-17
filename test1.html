@@ -17,15 +17,15 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 
 /* animated mesh background (static on touch devices for smooth scrolling) */
 .mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#f7f4ed,#eef3ef)}
-.mesh i{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55}
-.mesh i:nth-child(1){width:60vmax;height:60vmax;background:#bfe3d6;left:-20vmax;top:-18vmax;animation:drift1 18s ease-in-out infinite alternate}
-.mesh i:nth-child(2){width:50vmax;height:50vmax;background:#f3dba0;right:-18vmax;top:25vh;animation:drift2 22s ease-in-out infinite alternate}
-.mesh i:nth-child(3){width:46vmax;height:46vmax;background:#cfe0f5;left:10vmax;bottom:-22vmax;animation:drift1 26s ease-in-out infinite alternate-reverse}
+.mesh i{position:absolute;border-radius:50%;opacity:.8}
+.mesh i:nth-child(1){width:60vmax;height:60vmax;background:radial-gradient(circle,#bfe3d6 0%,rgba(255,255,255,0) 70%);left:-20vmax;top:-18vmax;animation:drift1 18s ease-in-out infinite alternate}
+.mesh i:nth-child(2){width:50vmax;height:50vmax;background:radial-gradient(circle,#f3dba0 0%,rgba(255,255,255,0) 70%);right:-18vmax;top:25vh;animation:drift2 22s ease-in-out infinite alternate}
+.mesh i:nth-child(3){width:46vmax;height:46vmax;background:radial-gradient(circle,#cfe0f5 0%,rgba(255,255,255,0) 70%);left:10vmax;bottom:-22vmax;animation:drift1 26s ease-in-out infinite alternate-reverse}
 @keyframes drift1{to{transform:translate(12vmax,10vmax) scale(1.15)}}
 @keyframes drift2{to{transform:translate(-14vmax,-8vmax) scale(.9)}}
 @media (hover:none){.mesh i{animation:none}}
 
-.app{max-width:680px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 14px 0}
+.app{max-width:680px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(92px + env(safe-area-inset-bottom,0px))}
 
 /* hero */
 .hero{position:relative;overflow:hidden;border-radius:28px;color:#fff;background:linear-gradient(145deg,#0a2f29 0%,#15564b 60%,#1d7364 100%);box-shadow:0 30px 60px -28px rgba(15,61,54,.7);animation:heroIn .9s var(--ease) both}
@@ -167,7 +167,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 
 /* ---------- navigation buttons ---------- */
 /* No backdrop-filter, no infinite transforms, no translateZ: keeps the sticky bar still while scrolling */
-.nav{position:sticky;bottom:0;z-index:15;margin:18px -16px 0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,rgba(255,255,255,0),#fcfbf8 34%);display:flex;gap:10px;border-radius:0 0 26px 26px}
+.navbar{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:0 10px;pointer-events:none}
+.nav{pointer-events:auto;max-width:680px;margin:0 auto;display:flex;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px));background:#fcfbf8;border-radius:22px 22px 0 0;box-shadow:0 -1px 0 rgba(14,31,28,.06),0 -14px 28px -18px rgba(14,31,28,.35)}
 .btn{position:relative;overflow:hidden;min-height:56px;border-radius:16px;border:0;padding:0;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .25s var(--ease),box-shadow .35s var(--ease),opacity .25s ease,background-color .3s ease}
 .btn:active{transform:scale(.97)}
 .btn.back{width:56px;flex:none;background:#fff;border:1.5px solid var(--line);color:var(--ink)}
@@ -175,20 +176,18 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .btn.back:disabled:active{transform:none}
 .btn.next{flex:1;color:#fff;background:linear-gradient(135deg,var(--green),var(--green2));box-shadow:0 16px 30px -14px rgba(15,61,54,.9)}
 .btn.next.wa{background:linear-gradient(135deg,#17a354,#25d366);box-shadow:0 16px 30px -14px rgba(23,163,84,.9)}
-/* a single soft shine that runs once in a while (only transform, so it stays smooth) */
-.btn.next::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-100%);animation:shine 4s ease-in-out infinite;pointer-events:none}
-@keyframes shine{0%,50%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 /* both labels share one grid cell, so the visible label is always centred */
-.stack{display:grid;justify-items:center;align-items:center;width:100%}
+.stack{position:relative;display:grid;justify-items:center;align-items:center;width:100%}
 .lbl{grid-area:1/1;display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;transition:opacity .3s ease,transform .3s ease}
 .l-wa{opacity:0;transform:translateY(8px)}
 .btn.next.wa .l-wa{opacity:1;transform:none}
 .btn.next.wa .l-go{opacity:0;transform:translateY(-8px)}
 .wai{width:22px;height:22px;fill:currentColor;stroke:none}
-.arr{transform:scaleX(-1);transition:transform .3s var(--ease)}
+.arrw{position:absolute;top:0;bottom:0;right:18px;display:flex;align-items:center;pointer-events:none;transition:opacity .3s ease,transform .3s var(--ease)}
+.arrw svg{transform:scaleX(-1)}
 @media (hover:hover){
   .btn.back:not(:disabled):hover{background:#f7f5ef}
-  .btn.next:hover .arr{transform:translateX(3px) scaleX(-1)}
+  .btn.next:hover .arrw{transform:translateX(3px)}
 }
 .rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none;z-index:3}
 @keyframes rip{to{transform:scale(4);opacity:0}}
@@ -261,7 +260,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .pulse{animation:pulseIn .7s var(--ease)}
 @keyframes pulseIn{0%{box-shadow:0 0 0 0 rgba(26,106,93,.45);background:#e8f5f0}100%{box-shadow:0 0 0 14px rgba(26,106,93,0)}}
 
-.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:40;max-width:calc(100vw - 32px);background:#0e1f1c;color:#fff;font-size:.85rem;font-weight:600;padding:12px 18px;border-radius:14px;box-shadow:0 18px 40px -12px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,16px) scale(.95);pointer-events:none;transition:opacity .35s,transform .45s var(--spring)}
+.toast{position:fixed;left:50%;bottom:calc(104px + env(safe-area-inset-bottom,0px));z-index:40;max-width:calc(100vw - 32px);background:#0e1f1c;color:#fff;font-size:.85rem;font-weight:600;padding:12px 18px;border-radius:14px;box-shadow:0 18px 40px -12px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,16px) scale(.95);pointer-events:none;transition:opacity .35s,transform .45s var(--spring)}
 .toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
 </style>
 </head>
@@ -280,7 +279,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
 <symbol id="mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
 <symbol id="shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
-<symbol id="back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="chev-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
 <symbol id="plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
 <symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
 <symbol id="star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L8 14.2 3 9.3l6.9-1z"/></symbol>
@@ -403,18 +402,20 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 
     </div>
 
-    <div class="nav">
-      <button type="button" class="btn back" id="back" aria-label="Back" disabled><svg class="i"><use href="#back"/></svg></button>
-      <button type="button" class="btn next" id="next">
-        <span class="stack">
-          <span class="lbl l-go"><span>Continue</span><svg class="i arr"><use href="#back"/></svg></span>
-          <span class="lbl l-wa"><svg class="wai" aria-hidden="true"><use href="#wa"/></svg><span>Send on WhatsApp</span></span>
-        </span>
-      </button>
-    </div>
   </form>
   <p class="foot">Your details are only used to arrange your transfer.</p>
 </main>
+
+<div class="navbar"><div class="nav">
+      <button type="button" class="btn back" id="back" aria-label="Back" disabled><svg class="i"><use href="#chev-left"/></svg></button>
+      <button type="button" class="btn next" id="next">
+        <span class="stack">
+          <span class="lbl l-go"><span>Continue</span></span>
+          <span class="arrw l-go" aria-hidden="true"><svg class="i"><use href="#chev-left"/></svg></span>
+          <span class="lbl l-wa"><svg class="wai" aria-hidden="true"><use href="#wa"/></svg><span>Send on WhatsApp</span></span>
+        </span>
+      </button>
+    </div></div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="done" id="done" role="status">
