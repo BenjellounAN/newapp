@@ -131,10 +131,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .car:hover::after{transform:translateX(120%)}
 .car input{position:absolute;opacity:0;pointer-events:none}
 /* photo slot: replace the empty span with <img src="..." alt="..."> */
-.vi{width:112px;height:82px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#e9f2ee,#f7ecd0);flex:none;display:block;transition:transform .5s var(--spring),box-shadow .4s}
-.vi img{width:100%;height:100%;object-fit:contain;display:block;padding:4px}
+.vi{width:82px;height:82px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#e9f2ee,#f7ecd0);flex:none;display:block;transition:transform .5s var(--spring),box-shadow .4s}
+.vi img{width:100%;height:100%;object-fit:contain;display:block}
 .ci{flex:1;min-width:0}
-@media(max-width:520px){.car{flex-wrap:wrap}.vi{width:100%;height:132px}.vi img{padding:6px}}
 .ci b{display:block;font-size:1rem;letter-spacing:-.005em}
 .ci>small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px;line-height:1.35}
 .feat{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
@@ -360,21 +359,21 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
       <div class="cars">
         <label class="car">
           <input type="radio" name="car" data-cap="5" data-price="350" data-unit="Dh" value="Mini Van (up to 5 guests)" checked>
-          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266541/Vito_VAN.png" alt="Mini Van" loading="lazy" decoding="async" width="120" height="82" onerror="this.remove()"></span>
+          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266541/Vito_VAN.png" alt="Mini Van" loading="lazy" decoding="async" width="82" height="82" onerror="this.remove()"></span>
           <span class="ci"><b>Mini Van</b><small>Spacious comfort for families and small groups</small><span class="feat"><span>Up to 5 guests</span><span>5 bags</span></span></span>
           <span class="pr"></span>
           <span class="tick"><svg class="i"><use href="#check"/></svg></span>
         </label>
         <label class="car">
           <input type="radio" name="car" data-cap="3" data-price="750" data-unit="Dh" value="Private Luxury Car (up to 3 guests)">
-          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/luxury_car.png" alt="Private Luxury Car" loading="lazy" decoding="async" width="120" height="82" onerror="this.remove()"></span>
+          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/luxury_car.png" alt="Private Luxury Car" loading="lazy" decoding="async" width="82" height="82" onerror="this.remove()"></span>
           <span class="ci"><b>Private Luxury Car</b><small>Private, executive comfort for couples and business travel</small><span class="feat"><span>Up to 3 guests</span><span>2 large + 1 small bag</span></span></span>
           <span class="pr"></span>
           <span class="tick"><svg class="i"><use href="#check"/></svg></span>
         </label>
         <label class="car">
           <input type="radio" name="car" data-cap="15" data-price="1000" data-unit="Dh / group" value="Luxury Van (up to 15 guests)">
-          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/sprinter_mini_bus.png" alt="Luxury Van" loading="lazy" decoding="async" width="120" height="82" onerror="this.remove()"></span>
+          <span class="vi"><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/sprinter_mini_bus.png" alt="Luxury Van" loading="lazy" decoding="async" width="82" height="82" onerror="this.remove()"></span>
           <span class="ci"><b>Luxury Van</b><small>Ideal for large groups, events and celebrations</small><span class="feat"><span>Up to 15 guests</span><span>Price per group</span></span></span>
           <span class="pr"></span>
           <span class="tick"><svg class="i"><use href="#check"/></svg></span>
