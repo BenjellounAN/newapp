@@ -683,7 +683,7 @@ function openWhatsApp(appUrl,webUrl){
 }
 function send(){
   const line=(emoji,k,val)=>val?`${emoji} *${k}:* ${val}`:null;
-  const nice=d=>{ if(!d) return ""; const x=new Date(d+"T12:00:00"); return isNaN(x)?d:x.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric"}) };
+  const nice=d=>{ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||""); return m?`${m[3]}/${m[2]}/${m[1]}`:(d||"") };
   const plural=(n,w)=>`${n} ${w}${+n===1?"":"s"}`;
   const kids=+cnt("kids");
   const guests=plural(cnt("adults"),"adult")+(kids?`, ${plural(kids,"child").replace("childs","children")}`:"");
