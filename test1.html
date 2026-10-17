@@ -101,7 +101,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .seg span{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;font-weight:800;font-size:.92rem;color:var(--muted);transition:color .3s}
 .seg input:checked+span{color:var(--green)}
 .seg input:focus-visible+span{outline:2px solid var(--green2)}
-.route{position:relative;display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:start;margin-bottom:14px}
+.route{position:relative;z-index:5;display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:start;margin-bottom:14px}
 .swap{margin-top:27px;width:50px;height:50px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 22px -8px rgba(15,61,54,.7);transition:transform .5s var(--spring)}
 .swap.spin{transform:rotate(180deg)}
 .swap:active{scale:.9}
