@@ -50,12 +50,6 @@ h1 .w{display:inline-block;opacity:0;transform:translateY(24px) rotateX(-50deg);
 .card{position:relative;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.9);border-radius:26px;padding:20px 16px 0;box-shadow:0 30px 60px -30px rgba(14,31,28,.35),inset 0 1px 0 #fff;animation:heroIn .9s .15s var(--ease) both}
 .step{display:none}
 .step.show{display:block}
-.step.in-r{animation:inR .5s var(--ease)}.step.in-l{animation:inL .5s var(--ease)}
-.step.out-r{display:block;animation:outR .22s ease-in forwards}.step.out-l{display:block;animation:outL .22s ease-in forwards}
-@keyframes inR{from{opacity:0;transform:translateX(50px)}}
-@keyframes inL{from{opacity:0;transform:translateX(-50px)}}
-@keyframes outR{to{opacity:0;transform:translateX(-40px)}}
-@keyframes outL{to{opacity:0;transform:translateX(40px)}}
 .step.show .rise{animation:rise .6s var(--ease) both;animation-delay:calc(var(--d,0)*55ms + .1s)}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}}
 h2{font-family:'Fraunces',serif;font-size:1.45rem;margin:0 0 2px;letter-spacing:-.01em}
@@ -65,7 +59,7 @@ h2{font-family:'Fraunces',serif;font-size:1.45rem;margin:0 0 2px;letter-spacing:
 label.l{display:block;font-size:.78rem;font-weight:800;margin:0 0 6px;transition:color .2s}
 .opt{font-weight:500;color:var(--muted)}
 .fi{position:relative}
-.fi>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gold);pointer-events:none;transition:.35s var(--spring)}
+.fi>svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--gold);pointer-events:none;transition:.35s var(--spring);z-index:1}
 .fi.ta>svg{top:20px;transform:none}
 .fi:focus-within>svg{color:var(--green2);transform:translateY(-50%) scale(1.25) rotate(-8deg)}
 .fi.ta:focus-within>svg{transform:scale(1.25) rotate(-8deg)}
@@ -78,6 +72,25 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .err{display:none;color:var(--err);font-size:.76rem;margin-top:5px;font-weight:700}
 .bad+.err,.fi.bad+.err{display:block;animation:rise .3s both}
 .bad+.err{display:block}
+
+/* ---------- place search (OpenStreetMap) ---------- */
+.sug{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 44px -20px rgba(14,31,28,.45);padding:6px;max-height:300px;overflow:auto;animation:rise .3s var(--ease) both}
+.sug[hidden]{display:none}
+.sug button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;border-radius:12px;padding:10px;font:inherit;cursor:pointer;color:var(--ink);transition:background .2s}
+.sug button:hover,.sug button:focus-visible{background:rgba(26,106,93,.07);outline:none}
+.sug .ic{color:var(--gold);display:grid;flex:none}
+.sug .ic svg{width:18px;height:18px}
+.sug .tx{min-width:0;flex:1}
+.sug .tx b{display:block;font-size:.88rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sug .tx small{display:block;font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sug .ld{padding:12px 10px;font-size:.8rem;color:var(--muted);font-weight:600;display:flex;gap:8px;align-items:center}
+.sug .ld i{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--green2);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sug .credit{font-size:.66rem;color:var(--muted);padding:8px 10px 4px;text-align:right;border-top:1px dashed var(--line);margin-top:4px}
+.nf{display:flex;align-items:flex-start;gap:10px;margin-top:10px;padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,#f1faf6,#fffdf6);border:1px solid #d6ebe3;font-size:.8rem;line-height:1.45;color:#41524e;animation:rise .45s var(--ease) both}
+.nf[hidden]{display:none}
+.nf svg{width:18px;height:18px;color:var(--green2);margin-top:1px}
+.nf b{color:var(--green)}
 
 .seg{position:relative;display:grid;grid-template-columns:1fr 1fr;background:rgba(14,31,28,.06);border-radius:16px;padding:4px;margin-bottom:16px}
 .seg::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:#fff;border-radius:12px;box-shadow:0 4px 14px rgba(14,31,28,.15);transition:transform .45s var(--spring)}
@@ -156,25 +169,32 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
 .sum h3{margin:0 0 6px;font-size:.85rem;color:var(--green);display:flex;gap:8px;align-items:center}
 .path{display:flex;align-items:center;gap:8px;margin:6px 0 10px;font-weight:800;font-size:.88rem}
 .path em{font-style:normal;max-width:34%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-@keyframes draw{to{stroke-dashoffset:0}}
 .row{display:flex;gap:10px;padding:9px 0;font-size:.88rem;border-top:1px solid rgba(14,31,28,.07);animation:rise .5s var(--ease) both;animation-delay:calc(var(--d)*90ms + .3s)}
 .row svg{width:17px;height:17px;color:var(--gold);margin-top:2px}
 .row span{color:var(--muted);min-width:68px}
 .row b{flex:1;font-weight:700;word-break:break-word}
 
+/* ---------- navigation buttons (stable, no layout shifts) ---------- */
 .nav{position:sticky;bottom:0;margin:18px -16px 0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.92) 30%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;gap:10px;border-radius:0 0 26px 26px}
-.btn{position:relative;overflow:hidden;min-height:56px;border-radius:16px;border:0;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .3s var(--spring),box-shadow .3s,width .4s var(--ease)}
-.btn.back{width:56px;background:#fff;border:1.5px solid var(--line);color:var(--ink);flex:none}
-.btn.back[hidden]{display:none}
-.btn.next{flex:1;color:#fff;background:linear-gradient(135deg,var(--green),var(--green2));box-shadow:0 16px 30px -14px rgba(15,61,54,.9)}
-.btn.next::before{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
-@keyframes shine{40%,100%{left:120%}}
-.btn.wa{background:linear-gradient(135deg,#17a354,#25d366);box-shadow:0 16px 30px -14px rgba(23,163,84,.9);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 16px 38px -8px rgba(37,211,102,.9)}}
-.btn:active{transform:scale(.96)}
-.btn .arr{transition:transform .3s var(--spring)}
-.btn.next:hover .arr{transform:translateX(4px)}
-.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+.btn{position:relative;overflow:hidden;isolation:isolate;min-height:56px;border-radius:16px;border:0;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transform:translateZ(0);backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .35s var(--spring),box-shadow .5s var(--ease),opacity .35s ease}
+.btn:active{transform:scale(.97);transition-duration:.12s}
+.btn.back{width:56px;flex:none;background:#fff;border:1.5px solid var(--line);color:var(--ink);transition:transform .35s var(--spring),opacity .35s ease}
+.btn.back:disabled{opacity:.35;cursor:default;transform:none}
+.btn.back:not(:disabled):hover{transform:translateX(-2px)}
+.btn.next{flex:1;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--green),var(--green2));box-shadow:0 16px 30px -14px rgba(15,61,54,.9)}
+.btn.next.wa{box-shadow:0 16px 30px -14px rgba(23,163,84,.9)}
+.btn.next::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.4) 50%,transparent 60%);background-size:250% 100%;background-repeat:no-repeat;background-position:150% 0;animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{0%,40%{background-position:150% 0}100%{background-position:-50% 0}}
+.bgw{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#17a354,#25d366);opacity:0;transition:opacity .5s ease;pointer-events:none}
+.btn.next.wa .bgw{opacity:1}
+.lbl{grid-area:1/1;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;transition:opacity .35s ease,transform .45s var(--ease)}
+.l-wa{opacity:0;transform:translateY(10px);pointer-events:none}
+.btn.next.wa .l-wa{opacity:1;transform:none;pointer-events:auto}
+.btn.next.wa .l-go{opacity:0;transform:translateY(-10px);pointer-events:none}
+.wai{width:22px;height:22px;fill:currentColor;stroke:none}
+.arr{transform:scaleX(-1);transition:transform .35s var(--spring)}
+.btn.next:hover .arr{transform:translateX(4px) scaleX(-1)}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none;z-index:3}
 @keyframes rip{to{transform:scale(4);opacity:0}}
 .foot{text-align:center;color:var(--muted);font-size:.78rem;padding:16px 0 calc(10px + env(safe-area-inset-bottom,0px))}
 
@@ -320,9 +340,9 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
         <label><input type="radio" name="type" value="Round trip"><span><svg class="i"><use href="#swap"/></svg>Round trip</span></label>
       </div>
       <div class="route">
-        <div id="bf"><label class="l" for="from">From</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="from" list="cities" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a pick-up city</div></div>
+        <div id="bf"><label class="l" for="from">From</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="from" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a pick-up city</div></div>
         <button type="button" class="swap" id="swap" aria-label="Swap locations"><svg class="i"><use href="#swap"/></svg></button>
-        <div id="bt"><label class="l" for="to">To</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="to" list="cities" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a destination</div></div>
+        <div id="bt"><label class="l" for="to">To</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="to" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a destination</div></div>
       </div>
       <div class="quick rise" aria-label="Popular places"><span>Popular</span>
         <button type="button" data-v="Marrakech Airport (RAK)">Marrakech Airport</button><button type="button" data-v="Casablanca Airport (CMN)">Casablanca Airport</button><button type="button" data-v="Marrakech">Marrakech</button><button type="button" data-v="Fes">Fes</button><button type="button" data-v="Tangier">Tangier</button><button type="button" data-v="Agadir">Agadir</button><button type="button" data-v="Essaouira">Essaouira</button><button type="button" data-v="Merzouga">Merzouga</button><button type="button" data-v="Chefchaouen">Chefchaouen</button>
@@ -394,8 +414,12 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
     </div>
 
     <div class="nav">
-      <button type="button" class="btn back" id="back" aria-label="Back" hidden><svg class="i"><use href="#back"/></svg></button>
-      <button type="button" class="btn next" id="next"></button>
+      <button type="button" class="btn back" id="back" aria-label="Back" disabled><svg class="i"><use href="#back"/></svg></button>
+      <button type="button" class="btn next" id="next">
+        <span class="bgw" aria-hidden="true"></span>
+        <span class="lbl l-go"><span>Continue</span><svg class="i arr"><use href="#back"/></svg></span>
+        <span class="lbl l-wa"><svg class="wai" aria-hidden="true"><use href="#wa"/></svg><span>Send on WhatsApp</span></span>
+      </button>
     </div>
   </form>
   <p class="foot">Your details are only used to arrange your transfer.</p>
@@ -412,9 +436,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--green2);box-shadow:0 
   </div>
 </div>
 
-<datalist id="cities">
-<option value="Casablanca Airport (CMN)"><option value="Marrakech Airport (RAK)"><option value="Fes Airport (FEZ)"><option value="Tangier Airport (TNG)"><option value="Agadir Airport (AGA)"><option value="Rabat"><option value="Casablanca"><option value="Marrakech"><option value="Fes"><option value="Tangier"><option value="Agadir"><option value="Essaouira"><option value="Chefchaouen"><option value="Merzouga"><option value="Ouarzazate"><option value="Meknes"><option value="Tetouan"><option value="Oujda"><option value="Dakhla"><option value="Ifrane"><option value="El Jadida"><option value="Taghazout">
-</datalist>
 <script>
 /* Set your WhatsApp number: international format, digits only (no + or 00) */
 const WHATSAPP_NUMBER = "212600000000";
@@ -424,12 +445,11 @@ const icon=n=>`<svg class="i"><use href="#${n}"/></svg>`;
 const v=id=>$("#"+id).value.trim();
 const round=()=>$('input[name=type]:checked').value==="Round trip";
 const cnt=c=>$(`[data-c=${c}] output`).textContent;
-const esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const buzz=(ms=12)=>{try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}};
-const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,x){try{localStorage.setItem(k,x)}catch(e){}}};
 
-const steps=$$(".step"), sts=$$(".st"), stage=$("#stage");
+const steps=$$(".step"), sts=$$(".st"), stage=$("#stage"), nx=$("#next"), back=$("#back");
 const dotIcons=["route","car","user"], names=["Trip details","Vehicle & extras","Your details"];
 let cur=0, busy=false;
 
@@ -450,6 +470,75 @@ const priceText=()=>{
   const i=$('input[name=car]:checked');
   return onMK() ? `${i.dataset.price} ${i.dataset.unit}` : "To be quoted";
 };
+
+/* ---- OpenStreetMap place search (Nominatim) ---- */
+const GEO="https://nominatim.openstreetmap.org/search";
+const placeName=r=>r.name||(r.display_name||"").split(",")[0];
+const placeLabel=r=>{
+  const a=r.address||{}, n=placeName(r);
+  const c=a.city||a.town||a.village||a.municipality||a.state||"";
+  return c&&c!==n?`${n}, ${c}`:n;
+};
+function setupPlace(id){
+  const el=$("#"+id), box=el.closest(".fi"), wrap=box.parentElement;
+  const list=document.createElement("div");
+  list.className="sug"; list.hidden=true;
+  box.appendChild(list);
+  const nf=document.createElement("div");
+  nf.className="nf"; nf.hidden=true;
+  nf.innerHTML=icon("note")+`<span><b>Can’t find your place?</b> Just type it in the field. We’ll confirm it with you on WhatsApp.</span>`;
+  wrap.appendChild(nf);
+
+  let items=[], t=0, ctrl=null;
+  const hide=()=>{list.hidden=true};
+  const showNF=()=>{list.hidden=true; nf.hidden=false};
+  function drawLoading(){
+    list.innerHTML=`<div class="ld"><i></i>Searching OpenStreetMap…</div>`;
+    list.hidden=false; nf.hidden=true;
+  }
+  function draw(){
+    if(!items.length){showNF();return}
+    nf.hidden=true;
+    list.innerHTML=items.map((r,i)=>{
+      const n=placeName(r);
+      const sub=(r.display_name||"").replace(n,"").replace(/^,\s*/,"").slice(0,70);
+      return `<button type="button" data-i="${i}"><span class="ic">${icon("pin")}</span><span class="tx"><b>${esc(n)}</b><small>${esc(sub)}</small></span></button>`;
+    }).join("")+`<div class="credit">© OpenStreetMap contributors</div>`;
+    list.hidden=false;
+  }
+  async function search(q){
+    ctrl=new AbortController();
+    drawLoading();
+    try{
+      const r=await fetch(`${GEO}?format=jsonv2&addressdetails=1&limit=6&accept-language=en&q=${encodeURIComponent(q)}`,{signal:ctrl.signal,headers:{Accept:"application/json"}});
+      if(!r.ok) throw new Error(r.status);
+      const data=await r.json();
+      if(el.value.trim()!==q) return;
+      items=data; draw();
+    }catch(e){
+      if(e.name==="AbortError") return;
+      items=[]; showNF();
+    }
+  }
+  el.addEventListener("input",()=>{
+    clearTimeout(t); if(ctrl) ctrl.abort();
+    const q=el.value.trim();
+    if(q.length<3){hide(); nf.hidden=true; return}
+    t=setTimeout(()=>search(q),380);
+  });
+  el.addEventListener("focus",()=>{
+    if(items.length&&el.value.trim().length>=3) list.hidden=false;
+  });
+  el.addEventListener("blur",()=>setTimeout(hide,160));
+  list.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-i]"); if(!b) return;
+    el.value=placeLabel(items[+b.dataset.i]);
+    list.hidden=true; nf.hidden=true;
+    box.classList.remove("bad");
+    el.dispatchEvent(new Event("change"));
+  });
+}
+setupPlace("from"); setupPlace("to");
 
 /* ---- hero title reveal + parallax ---- */
 $("#ttl").innerHTML=$("#ttl").textContent.split(" ").map((w,i)=>`<span class="w" style="--w:${i}">${w}</span>`).join(" ");
@@ -484,10 +573,12 @@ function dots(n){
 }
 sts.forEach((s,i)=>s.addEventListener("click",()=>{if(i<cur){buzz();show(i)}}));
 
+/* Button state: toggled by class, no HTML rewrites, so the transition stays smooth */
 function btnLabel(n){
-  const nx=$("#next"), last=n===2;
+  const last=n===2;
   nx.classList.toggle("wa",last);
-  nx.innerHTML=last?`<svg class="i" style="fill:currentColor;stroke:none;width:22px;height:22px"><use href="#wa"/></svg><span>Send on WhatsApp</span>`:`<span>Continue</span><svg class="i arr" style="transform:scaleX(-1)"><use href="#back"/></svg>`;
+  nx.setAttribute("aria-label",last?"Send on WhatsApp":"Continue");
+  back.disabled=n===0;
 }
 
 /* ---- smooth step transition: cross-fade + animated height ---- */
@@ -502,7 +593,7 @@ function show(n){
   nw.classList.add("show","abs","in-"+dir);
   void stage.offsetHeight;
   stage.style.height=nw.offsetHeight+"px";
-  cur=n; dots(n); btnLabel(n); $("#back").hidden=n===0;
+  cur=n; dots(n); btnLabel(n);
   const top=$("#f").getBoundingClientRect().top+scrollY-($("#steps").offsetHeight+24);
   scrollTo({top:Math.max(0,top),behavior:reduce?"auto":"smooth"});
   setTimeout(()=>{
@@ -585,14 +676,14 @@ function send(){
 }
 
 /* ---- navigation ---- */
-$("#next").onclick=()=>{
+nx.onclick=()=>{
   if(busy)return;
   if(cur===0){ if(!check(["from","to","date","time"].concat(round()?["rdate","rtime"]:[])))return; buzz(); show(1)}
   else if(cur===1){buzz();show(2)}
   else if(check(["name","phone"])) send();
 };
-$("#back").onclick=()=>{buzz();show(cur-1)};
-$("#f").addEventListener("submit",e=>{e.preventDefault();$("#next").click()});
+back.onclick=()=>{buzz();show(cur-1)};
+$("#f").addEventListener("submit",e=>{e.preventDefault();nx.click()});
 
 /* ---- trip type ---- */
 $$('input[name=type]').forEach(r=>r.onchange=()=>{
@@ -658,6 +749,7 @@ $$(".ctr").forEach(c=>c.onclick=e=>{
 
 /* ---- ripple on buttons ---- */
 $$(".btn").forEach(b=>b.addEventListener("pointerdown",e=>{
+  if(b.disabled)return;
   const bb=b.getBoundingClientRect(), r=document.createElement("span"), d=Math.max(bb.width,bb.height);
   r.className="rip"; r.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-bb.left-d/2}px;top:${e.clientY-bb.top-d/2}px`;
   b.appendChild(r); setTimeout(()=>r.remove(),600);
@@ -671,7 +763,7 @@ if(matchMedia("(hover:hover)").matches&&!reduce)$$(".car").forEach(c=>{
 
 /* ---- clear errors while typing + remember contact ---- */
 $$("input").forEach(i=>i.addEventListener("input",()=>{const f=i.closest(".fi");f&&f.classList.remove("bad")}));
-["name","phone","mail"].forEach(id=>{const el=$("#"+id),k="atlas_"+id;const sv=store.get(k);if(sv)el.value=sv;el.addEventListener("input",()=>store.set(k,el.value))});
+["name","phone","mail"].forEach(id=>{const el=$("#"+id),k="atlas_"+id;let sv=null;try{sv=localStorage.getItem(k)}catch(e){};if(sv)el.value=sv;el.addEventListener("input",()=>{try{localStorage.setItem(k,el.value)}catch(e){}})});
 
 /* ---- initial price render ---- */
 updatePrices();
