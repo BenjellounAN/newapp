@@ -663,6 +663,24 @@ function confetti(){
 }
 
 /* ---- send to WhatsApp ---- */
+const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/i.test(navigator.platform));
+function go(u){location.href=u}
+/* Phones: open the WhatsApp app directly. If the app didn't take over (not installed), fall back to the web link.
+   Desktop: wa.me, which offers the desktop app or WhatsApp Web. */
+function openWhatsApp(appUrl,webUrl){
+  const hideOverlay=()=>$("#done").classList.remove("on");
+  if(!isMobile){go(webUrl);setTimeout(hideOverlay,1500);return}
+  let left=false;
+  const mark=()=>{left=true};
+  const onVis=()=>{if(document.hidden)left=true};
+  addEventListener("pagehide",mark); addEventListener("blur",mark); document.addEventListener("visibilitychange",onVis);
+  go(appUrl);
+  setTimeout(()=>{
+    removeEventListener("pagehide",mark); removeEventListener("blur",mark); document.removeEventListener("visibilitychange",onVis);
+    if(!left&&!document.hidden) go(webUrl);
+    setTimeout(hideOverlay,800);
+  },2200);
+}
 function send(){
   const line=(emoji,k,val)=>val?`${emoji} *${k}:* ${val}`:null;
   const nice=d=>{ if(!d) return ""; const x=new Date(d+"T12:00:00"); return isNaN(x)?d:x.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric"}) };
@@ -696,10 +714,12 @@ function send(){
     bar,
     "_Please confirm availability and the final price. Thank you!_"
   ].filter(l=>l!==null);
-  const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(L.join("\n"));
+  const text=encodeURIComponent(L.join("\n"));
+  const webUrl="https://wa.me/"+WHATSAPP_NUMBER+"?text="+text;
+  const appUrl="whatsapp://send?phone="+WHATSAPP_NUMBER+"&text="+text;
   $("#done").classList.add("on"); buzz([20,30,60]);
   if(!reduce)confetti();
-  setTimeout(()=>{location.href=url; setTimeout(()=>$("#done").classList.remove("on"),1500)},reduce?300:1500);
+  setTimeout(()=>openWhatsApp(appUrl,webUrl),reduce?300:1500);
 }
 
 /* ---- navigation ---- */
