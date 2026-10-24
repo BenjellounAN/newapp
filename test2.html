@@ -324,14 +324,14 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 /* =========================================================
    10. Feature sections (parallax)
    ========================================================= */
-.feat{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.feature{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
 .feat-bg{position:absolute;inset:-12% 0;z-index:-2}
 .feat-bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
-.feat::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(244,241,234,.97) 0%,rgba(244,241,234,.8) 55%,rgba(244,241,234,.4) 100%),linear-gradient(0deg,var(--bg),rgba(244,241,234,0) 30%)}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(244,241,234,.97) 0%,rgba(244,241,234,.8) 55%,rgba(244,241,234,.4) 100%),linear-gradient(0deg,var(--bg),rgba(244,241,234,0) 30%)}
 .feat-in{max-width:640px;padding-block:120px}
-.feat h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.95;letter-spacing:-.035em;margin-top:22px;min-height:1em;text-wrap:balance}
-.feat p{margin-top:24px;font-size:1.08rem;color:rgba(14,31,28,.82);max-width:46ch}
-.feat .mx-btn{margin-top:36px}
+.feature h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.95;letter-spacing:-.035em;margin-top:22px;min-height:1em;text-wrap:balance}
+.feature p{margin-top:24px;font-size:1.08rem;color:rgba(14,31,28,.82);max-width:46ch}
+.feature .mx-btn{margin-top:36px}
 .feat-no{position:absolute;right:max(22px,calc((100vw - var(--wrap))/2 + 22px));bottom:44px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(5rem,14vw,11rem);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(166,124,0,.45);z-index:0;pointer-events:none}
 
 /* =========================================================
@@ -452,6 +452,23 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 /* =========================================================
    14. Booking form: its own CSS is scoped under #bk (unchanged)
    ========================================================= */
+/* Vehicle picker on phones: Uber-style rows (photo, name and seats, price on the right) */
+@media (max-width:640px){
+  #bk .cars{gap:10px}
+  #bk .car{display:grid;grid-template-columns:112px minmax(0,1fr) auto;grid-template-rows:auto auto auto;column-gap:12px;row-gap:0;align-items:center;padding:12px 14px;border-radius:22px;min-height:0}
+  #bk .car .vi{grid-column:1;grid-row:1/4;width:112px;height:72px;align-self:center;border-radius:14px;background:none}
+  #bk .car .vi img{width:112px}
+  #bk .car .ci{display:contents}
+  #bk .car .ci b{grid-column:2;grid-row:1;align-self:end;font-size:1.02rem;line-height:1.2;padding-right:26px}
+  #bk .car .ci>small{grid-column:2;grid-row:2;margin:2px 0 0;font-size:.74rem;line-height:1.3}
+  #bk .car .feat{grid-column:2;grid-row:3;margin-top:7px;gap:4px}
+  #bk .car .feat span{font-size:.64rem;padding:4px 7px}
+  #bk .car .pr{grid-column:3;grid-row:1/4;flex-direction:column;align-items:flex-end;justify-content:center;text-align:right;margin:0;padding:38px 0 0;border-top:0;gap:0;min-width:0}
+  #bk .car .pr b{font-size:1.55rem}
+  #bk .car .pr small{margin-top:4px;font-size:.62rem;white-space:nowrap}
+  #bk .car .tick{position:absolute;top:12px;right:12px;grid-column:auto;grid-row:auto;width:22px;height:22px}
+  #bk .car .tick svg{width:12px;height:12px}
+}
 #bk *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 #bk svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 @keyframes drift1{to{transform:translate(12vmax,10vmax) scale(1.15)}}
@@ -1110,7 +1127,7 @@ body.hdr-hidden #bk .steps{top:14px}
 </section>
 
 <!-- FEATURES -->
-<section class="feat" id="airport-luxury">
+<section class="feature" id="airport-luxury">
   <div class="feat-bg" data-speed=".12"><img src="https://i.ibb.co/Mx4Vn9V2/IMG-4586.jpg" alt="Luxury car at Marrakech airport"></div>
   <div class="wrap"><div class="feat-in">
     <p class="eyebrow">Airport</p>
@@ -1121,7 +1138,7 @@ body.hdr-hidden #bk .steps{top:14px}
   <span class="feat-no" aria-hidden="true">01</span>
 </section>
 
-<section class="feat" id="city-tours">
+<section class="feature" id="city-tours">
   <div class="feat-bg" data-speed=".12"><img src="https://i.ibb.co/21bS9Y48/IMG-4590.jpg" alt="Marrakech city tour with private chauffeur"></div>
   <div class="wrap"><div class="feat-in">
     <p class="eyebrow">Tours</p>
@@ -1132,7 +1149,7 @@ body.hdr-hidden #bk .steps{top:14px}
   <span class="feat-no" aria-hidden="true">02</span>
 </section>
 
-<section class="feat" id="private-chauffeur">
+<section class="feature" id="private-chauffeur">
   <div class="feat-bg" data-speed=".12"><img src="https://i.ibb.co/BV4HxT4Z/IMG-4585.png" alt="Private chauffeur service Marrakech"></div>
   <div class="wrap"><div class="feat-in">
     <p class="eyebrow">Chauffeur</p>
