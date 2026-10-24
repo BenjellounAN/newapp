@@ -1607,22 +1607,13 @@ function confetti(){
 
 /* ---- send to WhatsApp ---- */
 const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/i.test(navigator.platform));
-function go(u){const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
-/* Phones: open the WhatsApp app directly. If the app didn't take over (not installed), fall back to the web link.
-   Desktop: wa.me, which offers the desktop app or WhatsApp Web. */
-function openWhatsApp(appUrl,webUrl){
-  const hideOverlay=()=>$("#done").classList.remove("on");
-  
-  let left=false;
-  const mark=()=>{left=true};
-  const onVis=()=>{if(document.hidden)left=true};
-  addEventListener("pagehide",mark); addEventListener("blur",mark); document.addEventListener("visibilitychange",onVis);
-  go(appUrl);
-  setTimeout(()=>{
-    removeEventListener("pagehide",mark); removeEventListener("blur",mark); document.removeEventListener("visibilitychange",onVis);
-    if(!left&&!document.hidden) go(webUrl);
-    setTimeout(hideOverlay,800);
-  },1800);
+/* Must be called directly inside the tap handler, otherwise browsers block the new window */
+function openWhatsApp(webUrl){
+  if (isMobile) {
+    window.location.href = webUrl;               // opens the WhatsApp app directly
+  } else {
+    window.open(webUrl, "_blank", "noopener");   // WhatsApp Web on desktop
+  }
 }
 function send(){
   const line=(emoji,k,val)=>val?`${emoji} *${k}:* ${val}`:null;
@@ -1634,7 +1625,7 @@ function send(){
   const tel=v("phone").replace(/[^\d]/g,"");
   const L=[
     "🚘 *NEW TRANSFER REQUEST*",
-    "_BEN Transfers_",
+    "_BEN Transport Marrakech_",
     bar,
     line("🧭","Trip",$('input[name=type]:checked').value),"",
     line("📍","From",v("from")),
@@ -1659,10 +1650,15 @@ function send(){
   ].filter(l=>l!==null);
   const text=encodeURIComponent(L.join("\n"));
   const webUrl="https://wa.me/"+WHATSAPP_NUMBER+"?text="+text;
-  const appUrl="whatsapp://send?phone="+WHATSAPP_NUMBER+"&text="+text;
+
   $("#done").classList.add("on"); buzz([20,30,60]);
   if(!reduce)confetti();
-  let _waDone=false;const _waGo=()=>{if(_waDone)return;_waDone=true;openWhatsApp(appUrl,webUrl)};$(".done .bar i").addEventListener("animationend",_waGo,{once:true});setTimeout(_waGo,reduce?300:1700);
+
+  // Opens immediately inside the tap (no setTimeout), so the browser allows it
+  openWhatsApp(webUrl);
+
+  // Hide the overlay on desktop; on mobile the app takes over
+  if (!isMobile) setTimeout(() => $("#done").classList.remove("on"), 1500);
 }
 
 /* ---- navigation ---- */
