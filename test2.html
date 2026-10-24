@@ -238,23 +238,21 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 /* =========================================================
    6. Transfers (bento)
    ========================================================= */
-.bento{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:80px 96px;margin-top:56px}
+.bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px;margin:56px auto 0;max-width:560px}
 .tile{position:relative;isolation:isolate;border-radius:36px;padding:64px 56px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(165deg,#ffffff 0%,#f8f3e7 55%,#e9f1ec 100%);border:1px solid rgba(166,124,0,.2);box-shadow:0 40px 70px -48px rgba(14,31,28,.35),inset 0 1px 0 #fff;transition:transform .8s var(--ease),box-shadow .8s var(--ease),border-color .5s}
 .tile::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(166,124,0,.18),transparent 60%);transition:opacity .5s}
 .tile:hover::before{opacity:1}
 .tile:hover{transform:translateY(-8px);border-color:rgba(166,124,0,.4);box-shadow:0 56px 90px -50px rgba(14,31,28,.45),inset 0 1px 0 #fff}
-.tile.big{grid-row:span 2;min-height:660px}
-.tile h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
-.tile p{margin-top:16px;color:var(--mute);max-width:34ch;font-size:.98rem;line-height:1.65}
+.tile{min-height:240px;padding:34px 28px}
+.tile h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.1rem,1.5vw,1.3rem);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
+.tile p{margin-top:10px;color:var(--mute);max-width:34ch;font-size:.8rem;line-height:1.5}
 .tile .idx{position:absolute;top:34px;right:40px;font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.1rem}
 .art{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .art img{position:absolute;max-width:none;filter:drop-shadow(0 30px 30px rgba(14,31,28,.22))}
 /* plane: centred on the top-right corner, half inside and half outside the card */
-.art-plane{top:0;left:0;width:190px;transform:translate(-50%,-50%);animation:trPlane 7s ease-in-out infinite}
+.art-plane{top:0;left:0;width:90px;transform:translate(-50%,-50%);animation:trPlane 7s ease-in-out infinite}
 /* car: centred on the bottom-right corner, half inside and half outside the card */
-.art-car{bottom:0;right:0;width:290px;transform:translate(50%,50%);animation:trCar 8s ease-in-out infinite}
-.tile.big .art-plane{width:270px}
-.tile.big .art-car{width:400px}
+.art-car{bottom:0;right:0;width:130px;transform:translate(50%,50%);animation:trCar 8s ease-in-out infinite}
 @keyframes trPlane{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 12px))}}
 @keyframes trCar{0%,100%{transform:translate(50%,50%)}50%{transform:translate(50%,calc(50% - 12px))}}
 
@@ -968,7 +966,7 @@ body.hdr-hidden #bk .steps{top:14px}
     </div>
 
     <div class="bento">
-      <article class="tile big spot rv">
+      <article class="tile spot rv">
         <div class="art">
           <img class="art-plane" src="https://i.ibb.co/4nL1QWgw/IMG-5378.png" alt="Marrakech Menara Airport pickup" loading="lazy">
           <img class="art-car" src="https://i.ibb.co/1tkdbcf3/IMG-5379.png" alt="Mercedes Vito private chauffeur Marrakech" loading="lazy">
@@ -977,22 +975,12 @@ body.hdr-hidden #bk .steps{top:14px}
         <h3>Airport Pickup</h3>
         <p>Seamless airport reception with luxury vehicles and professional drivers ensuring comfort from the first moment.</p>
       </article>
-
-      <article class="tile spot rv">
-        <div class="art">
-          <img class="art-plane" src="https://i.ibb.co/4nL1QWgw/IMG-5378.png" alt="Destination arrival in Marrakech" loading="lazy">
-          <img class="art-car" src="https://i.ibb.co/1tkdbcf3/IMG-5379.png" alt="Private chauffeur arrival in Marrakech" loading="lazy">
-        </div>
-        <span class="idx">ii.</span>
-        <h3>Airport Transfer</h3>
-      </article>
-
       <article class="tile spot rv">
         <div class="art">
           <img class="art-plane" src="https://i.ibb.co/TxqtnrrC/IMG-5380.png" alt="Atlas Mountains tour transfer" loading="lazy">
           <img class="art-car" src="https://i.ibb.co/q3dSFMjY/IMG-5377.png" alt="Toyota Prado luxury chauffeur" loading="lazy">
         </div>
-        <span class="idx">iii.</span>
+        <span class="idx">ii.</span>
         <h3>Atlas Mountains Experience</h3>
         <p>Enjoy a private journey through the stunning Atlas Mountains with scenic roads, panoramic views, and authentic Berber villages, all in comfort with a professional driver.</p>
       </article>
