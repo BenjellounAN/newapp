@@ -214,6 +214,9 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 .price-list{margin-top:20px;display:grid;gap:2px}
 .price-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
 .price-list li span{font-weight:700}
+.price-list li>img{width:84px;height:60px;object-fit:contain;flex:none;background:transparent;box-shadow:none}
+.price-list li>span{flex:1;min-width:0}
+#bk .quick>span{scroll-snap-align:start;flex:none;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);background:#f6efdc;border:1px solid rgba(166,124,0,.45);padding:7px 13px;border-radius:999px;box-shadow:0 6px 14px -10px rgba(14,31,28,.4)}
 .price-list small{display:block;font-weight:500;color:var(--faint);font-size:.78rem}
 .price-list b{font-family:'Fraunces',Georgia,serif;font-size:1.7rem;font-weight:500;white-space:nowrap}
 .price-list b i{font-style:normal;font-family:'Manrope',sans-serif;font-size:.78rem;color:var(--mute);margin-left:4px;font-weight:700}
@@ -307,11 +310,14 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 .veh-img{position:relative;height:270px;border-radius:24px;overflow:hidden;background:radial-gradient(90% 80% at 50% 30%,#f7efdf,#e3ebe6)}
 .veh-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .veh:hover .veh-img img{transform:scale(1.07)}
+.veh-vid{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease);background:#e3ebe6}
+.veh:hover .veh-vid{transform:scale(1.07)}
 .veh-cap{position:absolute;left:14px;top:14px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:.74rem;font-weight:800;color:var(--gold2)}
 .veh-body{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 10px 0}
 .veh h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.6rem;letter-spacing:-.01em}
 .veh p{color:var(--faint);font-size:.88rem;margin-top:4px}
 .veh-go{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--ivory);color:var(--bg);text-decoration:none;transition:transform .5s var(--spring),background .3s}
+.veh .veh-desc{margin-top:16px;padding:0 10px;color:var(--mute);font-size:.94rem;line-height:1.65}
 .veh-go:hover{transform:rotate(-45deg);background:var(--gold2)}
 .veh-go svg{width:20px;height:20px}
 
@@ -783,9 +789,9 @@ body.hdr-hidden #bk .steps{top:14px}
       <p class="kick">Fixed rates · Marrakech</p>
       <h3>Know your price before you book</h3>
       <ul class="price-list">
-        <li><span>Mini Van<small>Up to 7 guests · 7 bags</small></span><b>350<i>Dh</i></b></li>
-        <li><span>Private Luxury Car<small>Up to 3 guests</small></span><b>750<i>Dh</i></b></li>
-        <li><span>Luxury Van<small>Up to 15 guests · per group</small></span><b>1000<i>Dh</i></b></li>
+        <li><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266541/Vito_VAN.png" alt="Luxury Mini Van Comfort, Mercedes Vito van" loading="lazy"><span>Luxury Mini Van Comfort<small>7 seats · 7 bags</small></span><b>7<i>seats</i></b></li>
+        <li><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/luxury_car.png" alt="Private Luxury Car, Mercedes S-Class sedan" loading="lazy"><span>Private Luxury Car<small>4 seats</small></span><b>4<i>seats</i></b></li>
+        <li><img src="https://res.cloudinary.com/wdanrihl/image/upload/v1792266540/sprinter_mini_bus.png" alt="Luxury Van, Mercedes Vito van" loading="lazy"><span>Luxury Van<small>17 seats · per group</small></span><b>17<i>seats</i></b></li>
       </ul>
       <a class="mx-link" href="#booking-form">Get your exact quote<svg class="i"><use href="#mx-arrow"/></svg></a>
     </aside>
@@ -841,7 +847,7 @@ body.hdr-hidden #bk .steps{top:14px}
         <div id="bt"><label class="l" for="to">To</label><div class="fi"><svg class="i"><use href="#pin"/></svg><input id="to" placeholder="City, airport or hotel" autocomplete="off" required></div><div class="err">Choose a destination</div></div>
       </div>
       <div class="quick rise" aria-label="Popular places"><span>Popular</span>
-        <button type="button" data-v="Marrakech Airport (RAK)">Marrakech Airport</button><button type="button" data-v="Casablanca Airport (CMN)">Casablanca Airport</button><button type="button" data-v="Marrakech">Marrakech</button><button type="button" data-v="Fes">Fes</button><button type="button" data-v="Tangier">Tangier</button><button type="button" data-v="Agadir">Agadir</button><button type="button" data-v="Essaouira">Essaouira</button><button type="button" data-v="Merzouga">Merzouga</button><button type="button" data-v="Chefchaouen">Chefchaouen</button>
+        <button type="button" data-v="Marrakech Airport (RAK)">Marrakech Airport</button><button type="button" data-v="Casablanca Airport (CMN)">Casablanca Airport</button><button type="button" data-v="Marrakech">Marrakech</button><button type="button" data-v="Fes">Fes</button><button type="button" data-v="Tangier">Tangier</button><button type="button" data-v="Agadir">Agadir</button><button type="button" data-v="Essaouira">Essaouira</button><button type="button" data-v="Merzouga">Merzouga</button><button type="button" data-v="Chefchaouen">Chefchaouen</button><button type="button" data-v="Hotel Valeria">Hotel Valeria</button><button type="button" data-v="Hotel Four Seasons">Hotel Four Seasons</button><button type="button" data-v="Ourika Valley">Ourika Valley</button><button type="button" data-v="Agafay Desert">Agafay Desert</button>
       </div>
       <div class="grid">
         <div><label class="l" for="date">Date</label><div class="fi"><svg class="i"><use href="#cal"/></svg><input type="date" id="date" required></div><div class="mini"><button type="button" data-add="0">Today</button><button type="button" data-add="1">Tomorrow</button></div><div class="err">Pick a date</div></div>
@@ -1054,38 +1060,53 @@ body.hdr-hidden #bk .steps{top:14px}
   <div class="wrap">
     <div class="fleet-head">
       <div>
-        <p class="eyebrow">Our vehicles</p>
-        <h2 class="h2 split">Our <em>fleet</em></h2>
+        <p class="eyebrow">Most requested</p>
+        <h2 class="h2 split">Most requested <em>destinations</em></h2>
       </div>
       <div class="arrows">
-        <button type="button" id="railPrev" aria-label="Previous vehicle"><svg class="i"><use href="#mx-left"/></svg></button>
-        <button type="button" id="railNext" aria-label="Next vehicle"><svg class="i"><use href="#mx-arrow"/></svg></button>
+        <button type="button" id="railPrev" aria-label="Previous destination"><svg class="i"><use href="#mx-left"/></svg></button>
+        <button type="button" id="railNext" aria-label="Next destination"><svg class="i"><use href="#mx-arrow"/></svg></button>
       </div>
     </div>
   </div>
 
-  <div class="rail" id="rail" tabindex="0" aria-label="Vehicles, scroll sideways">
-    <article class="veh">
-      <div class="veh-img"><span class="veh-cap">3 people</span><img src="https://i.ibb.co/3mKdnXTh/IMG-4593.jpg" alt="Mercedes S-Class private driver Marrakech" loading="lazy"></div>
-      <div class="veh-body"><div><h3>Mercedes S-Class</h3><p>Executive comfort</p></div><a class="veh-go" href="#booking-form" aria-label="Book Mercedes S-Class"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+  <div class="rail" id="rail" tabindex="0" aria-label="Destinations, scroll sideways">
+        <article class="veh">
+      <div class="veh-img"><span class="veh-cap">Day trip</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/ynzvKyRm/IMG-4559.jpg" aria-label="Ourika Valley, Marrakech video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/ourika.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Ourika Valley</h3><p>Marrakech</p></div><a class="veh-go" href="#booking-form" aria-label="Book Ourika Valley, Marrakech"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">Escape the city for the day. Winding Atlas roads, Berber villages and waterfalls are about an hour away. Let a private driver take you there in comfort.</p>
     </article>
     <article class="veh">
-      <div class="veh-img"><span class="veh-cap">8 people</span><img src="https://i.ibb.co/M53Vb7zy/IM-4592.jpg" alt="Mercedes Vito van transfer Marrakech" loading="lazy"></div>
-      <div class="veh-body"><div><h3>Van Mercedes Vito</h3><p>Groups and families</p></div><a class="veh-go" href="#booking-form" aria-label="Book Mercedes Vito"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+      <div class="veh-img"><span class="veh-cap">Waterfall</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/M53Vb7zy/IM-4592.jpg" aria-label="Ouzoud Waterfall video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/MARRAKECH_BEST_OF.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Ouzoud Waterfall</h3><p>Middle Atlas</p></div><a class="veh-go" href="#booking-form" aria-label="Book Ouzoud Waterfall"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+      <p class="veh-desc">Cascading falls and turquoise pools in the Middle Atlas, with Barbary macaques along the trail. Book a private transfer and enjoy every step of the way.</p>
     </article>
     <article class="veh">
-      <div class="veh-img"><span class="veh-cap">3 people</span><img src="https://i.ibb.co/S73fV3NH/IMG-4596.jpg" alt="Range Rover VIP transfer Morocco" loading="lazy"></div>
-      <div class="veh-body"><div><h3>Range Rover</h3><p>Premium SUV</p></div><a class="veh-go" href="#booking-form" aria-label="Book Range Rover"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+      <div class="veh-img"><span class="veh-cap">Desert</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/gFdrH5Xg/IMG-4595.webp" aria-label="Merzouga Desert video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/merzouga.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Merzouga Desert</h3><p>Sahara dunes</p></div><a class="veh-go" href="#booking-form" aria-label="Book Merzouga Desert"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">Golden dunes, starlit desert camps and camel trails at the edge of the Sahara. Book your private transfer and enjoy the adventure of a lifetime.</p>
     </article>
     <article class="veh">
-      <div class="veh-img"><span class="veh-cap">6 people</span><img src="https://i.ibb.co/gFdrH5Xg/IMG-4595.webp" alt="Toyota Prado 4x4 tour transfer" loading="lazy"></div>
-      <div class="veh-body"><div><h3>Toyota Prado</h3><p>Mountain and desert tours</p></div><a class="veh-go" href="#booking-form" aria-label="Book Toyota Prado"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+      <div class="veh-img"><span class="veh-cap">City tour</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/21bS9Y48/IMG-4590.jpg" aria-label="Fes video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/fes.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Fes</h3><p>Imperial city</p></div><a class="veh-go" href="#booking-form" aria-label="Book Fes"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">Step into one of the world's oldest medinas, with ancient tanneries, historic mosques and winding souks. Book a private transfer and arrive stress-free.</p>
     </article>
     <article class="veh">
-      <div class="veh-img"><span class="veh-cap">3 people</span><img src="https://i.ibb.co/VWQkZcMR/IMG-4597.jpg" alt="Skoda Octavia airport taxi" loading="lazy"></div>
-      <div class="veh-body"><div><h3>Skoda Octavia</h3><p>Smart airport transfers</p></div><a class="veh-go" href="#booking-form" aria-label="Book Skoda Octavia"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+      <div class="veh-img"><span class="veh-cap">City tour</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/Mx4Vn9V2/IMG-4586.jpg" aria-label="Rabat video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/Rabat.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Rabat</h3><p>Capital</p></div><a class="veh-go" href="#booking-form" aria-label="Book Rabat"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">Morocco's elegant capital, with the Kasbah des Oudayas, the Hassan Tower and Atlantic breezes. Ride in comfort with a private driver from door to door.</p>
     </article>
-  </div>
+    <article class="veh">
+      <div class="veh-img"><span class="veh-cap">Desert</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/gFdrH5Xg/IMG-4595.webp" aria-label="Agafay Desert, Marrakech video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/agafay.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Agafay Desert</h3><p>Marrakech</p></div><a class="veh-go" href="#booking-form" aria-label="Book Agafay Desert, Marrakech"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">An otherworldly stone desert just outside Marrakech, with sunset views and luxury camp dinners. Book your private transfer for an unforgettable evening.</p>
+    </article>
+    <article class="veh">
+      <div class="veh-img"><span class="veh-cap">Day trip</span><video class="veh-vid" muted loop playsinline preload="none" poster="https://i.ibb.co/ynzvKyRm/IMG-4559.jpg" aria-label="Chefchaouen video"><source src="https://res.cloudinary.com/wdanrihl/video/upload/chafchaouen.mp4" type="video/mp4"></video></div>
+      <div class="veh-body"><div><h3>Chefchaouen</h3><p>Blue city</p></div><a class="veh-go" href="#booking-form" aria-label="Book Chefchaouen"><svg class="i"><use href="#mx-arrow"/></svg></a></div>
+    <p class="veh-desc">The blue pearl of the Rif Mountains, with painted lanes and crisp mountain air. Relax on a private transfer and discover Morocco's most photogenic town.</p>
+    </article>
+    </div>
 </section>
 
 <!-- FEATURES -->
@@ -1312,6 +1333,22 @@ body.hdr-hidden #bk .steps{top:14px}
     });
     b.addEventListener('pointerleave', () => { b.style.transform = ''; });
   });
+
+  /* Destination videos: muted, loop, play on hover (touch screens: play while in view) */
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const hoverOK = matchMedia('(hover: hover)').matches;
+    const io = 'IntersectionObserver' in window && !hoverOK
+      ? new IntersectionObserver(es => es.forEach(e => { const v = e.target.querySelector('video'); if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }), { threshold: 0.6 })
+      : null;
+    $$('.veh').forEach(card => {
+      const v = card.querySelector('video');
+      v.defaultMuted = true; v.muted = true;
+      if (hoverOK) {
+        card.addEventListener('pointerenter', () => v.play().catch(() => {}));
+        card.addEventListener('pointerleave', () => v.pause());
+      } else if (io) io.observe(card);
+    });
+  }
 
   /* Fleet rail: arrows + mouse drag */
   const rail = $('#rail');
