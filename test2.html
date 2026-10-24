@@ -246,16 +246,16 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 .tile.big{grid-row:span 2;min-height:660px}
 .tile h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
 .tile p{margin-top:16px;color:var(--mute);max-width:34ch;font-size:.98rem;line-height:1.65}
-.tile .idx{position:absolute;top:34px;left:40px;font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.1rem}
+.tile .idx{position:absolute;top:34px;right:40px;font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.1rem}
 .art{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .art img{position:absolute;max-width:none;filter:drop-shadow(0 30px 30px rgba(14,31,28,.22))}
 /* plane: centred on the top-right corner, half inside and half outside the card */
-.art-plane{top:0;right:0;width:190px;transform:translate(50%,-50%);animation:trPlane 7s ease-in-out infinite}
+.art-plane{top:0;left:0;width:190px;transform:translate(-50%,-50%);animation:trPlane 7s ease-in-out infinite}
 /* car: centred on the bottom-right corner, half inside and half outside the card */
 .art-car{bottom:0;right:0;width:290px;transform:translate(50%,50%);animation:trCar 8s ease-in-out infinite}
 .tile.big .art-plane{width:270px}
 .tile.big .art-car{width:400px}
-@keyframes trPlane{0%,100%{transform:translate(50%,-50%)}50%{transform:translate(50%,calc(-50% - 12px))}}
+@keyframes trPlane{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 12px))}}
 @keyframes trCar{0%,100%{transform:translate(50%,50%)}50%{transform:translate(50%,calc(50% - 12px))}}
 
 /* =========================================================
