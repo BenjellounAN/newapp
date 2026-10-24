@@ -1607,7 +1607,7 @@ function confetti(){
 
 /* ---- send to WhatsApp ---- */
 const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/i.test(navigator.platform));
-function go(u){location.href=u}
+function go(u){const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
 /* Phones: open the WhatsApp app directly. If the app didn't take over (not installed), fall back to the web link.
    Desktop: wa.me, which offers the desktop app or WhatsApp Web. */
 function openWhatsApp(appUrl,webUrl){
@@ -1622,7 +1622,7 @@ function openWhatsApp(appUrl,webUrl){
     removeEventListener("pagehide",mark); removeEventListener("blur",mark); document.removeEventListener("visibilitychange",onVis);
     if(!left&&!document.hidden) go(webUrl);
     setTimeout(hideOverlay,800);
-  },2200);
+  },1800);
 }
 function send(){
   const line=(emoji,k,val)=>val?`${emoji} *${k}:* ${val}`:null;
@@ -1662,7 +1662,7 @@ function send(){
   const appUrl="whatsapp://send?phone="+WHATSAPP_NUMBER+"&text="+text;
   $("#done").classList.add("on"); buzz([20,30,60]);
   if(!reduce)confetti();
-  setTimeout(()=>openWhatsApp(appUrl,webUrl),reduce?300:1500);
+  let _waDone=false;const _waGo=()=>{if(_waDone)return;_waDone=true;openWhatsApp(appUrl,webUrl)};$(".done .bar i").addEventListener("animationend",_waGo,{once:true});setTimeout(_waGo,reduce?300:1700);
 }
 
 /* ---- navigation ---- */
