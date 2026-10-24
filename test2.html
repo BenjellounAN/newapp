@@ -238,27 +238,25 @@ html[dir="rtl"] .mx-logo{direction:ltr}
 /* =========================================================
    6. Transfers (bento)
    ========================================================= */
-.bento{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:20px;margin-top:8px}
-.tile{position:relative;overflow:hidden;border-radius:32px;padding:34px;background:var(--panel);border:1px solid var(--line);isolation:isolate;transition:border-color .5s,transform .7s var(--ease)}
-.tile::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(166,124,0,.22),transparent 60%);transition:opacity .5s}
+.bento{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:80px 96px;margin-top:56px}
+.tile{position:relative;isolation:isolate;border-radius:36px;padding:64px 56px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(165deg,#ffffff 0%,#f8f3e7 55%,#e9f1ec 100%);border:1px solid rgba(166,124,0,.2);box-shadow:0 40px 70px -48px rgba(14,31,28,.35),inset 0 1px 0 #fff;transition:transform .8s var(--ease),box-shadow .8s var(--ease),border-color .5s}
+.tile::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(166,124,0,.18),transparent 60%);transition:opacity .5s}
 .tile:hover::before{opacity:1}
-.tile:hover{border-color:rgba(166,124,0,.4)}
-.tile.big{grid-row:span 2;min-height:640px;display:flex;flex-direction:column;justify-content:flex-end}
-.tile h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.7rem,2.6vw,2.3rem);line-height:1.05;letter-spacing:-.02em}
-.tile p{margin-top:12px;color:var(--mute);max-width:44ch;font-size:.97rem}
-.tile .idx{position:absolute;top:30px;right:32px;font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--faint);font-size:1.1rem}
+.tile:hover{transform:translateY(-8px);border-color:rgba(166,124,0,.4);box-shadow:0 56px 90px -50px rgba(14,31,28,.45),inset 0 1px 0 #fff}
+.tile.big{grid-row:span 2;min-height:660px}
+.tile h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
+.tile p{margin-top:16px;color:var(--mute);max-width:34ch;font-size:.98rem;line-height:1.65}
+.tile .idx{position:absolute;top:34px;left:40px;font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.1rem}
 .art{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.art img{position:absolute;max-width:none;filter:drop-shadow(0 30px 30px rgba(14,31,28,.18))}
-.art-plane{top:12%;left:14%;width:150px;animation:mxFloat 7s ease-in-out infinite}
-.art-car{bottom:12%;right:6%;width:300px;animation:mxFloat 8s ease-in-out -2s infinite}
-.art-city{top:8%;left:8%;width:200px;animation:mxFloat 9s ease-in-out infinite}
-.art-city-car{bottom:14%;right:-4%;width:280px;animation:mxFloat 7s ease-in-out -3s infinite}
-.badge{position:absolute;top:34px;left:34px;width:88px;height:88px;border-radius:28px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold-hi),var(--gold));color:#fff;box-shadow:0 26px 50px -18px rgba(166,124,0,.8)}
-.badge svg{width:40px;height:40px;stroke-width:1.4}
-.tile.big .art::after,.tile .art::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(244,241,234,.92) 0%,rgba(244,241,234,0) 60%)}
-.tile.big .art::after{background:linear-gradient(0deg,rgba(244,241,234,.95) 0%,rgba(244,241,234,.2) 55%,rgba(244,241,234,0) 100%)}
-.tile.big .art-plane{top:auto;bottom:auto;top:90px;left:auto;right:-20px;width:240px}
-.tile.big .art-car{width:420px;bottom:auto;top:200px;right:-70px}
+.art img{position:absolute;max-width:none;filter:drop-shadow(0 30px 30px rgba(14,31,28,.22))}
+/* plane: centred on the top-right corner, half inside and half outside the card */
+.art-plane{top:0;right:0;width:190px;transform:translate(50%,-50%);animation:trPlane 7s ease-in-out infinite}
+/* car: centred on the bottom-right corner, half inside and half outside the card */
+.art-car{bottom:0;right:0;width:290px;transform:translate(50%,50%);animation:trCar 8s ease-in-out infinite}
+.tile.big .art-plane{width:270px}
+.tile.big .art-car{width:400px}
+@keyframes trPlane{0%,100%{transform:translate(50%,-50%)}50%{transform:translate(50%,calc(-50% - 12px))}}
+@keyframes trCar{0%,100%{transform:translate(50%,50%)}50%{transform:translate(50%,calc(50% - 12px))}}
 
 /* =========================================================
    7. How it works (sticky story)
@@ -431,11 +429,8 @@ html[dir="rtl"] .mx-logo{direction:ltr}
   .hero-grid{padding-bottom:40px}
   .tile{padding:26px}
   .tile.big{min-height:500px}
-  .art-car{width:220px}
-  .tile.big .art-car{width:280px;right:-40px}
-  .tile.big .art-plane{width:150px}
-  .art-city{width:140px}
-  .art-city-car{width:200px}
+  .art-plane,.tile.big .art-plane{width:130px}
+  .art-car,.tile.big .art-car{width:200px}
   .feat-no{display:none}
   .site-foot-grid{grid-template-columns:1fr}
   .book-r{padding:0}
@@ -984,24 +979,23 @@ body.hdr-hidden #bk .steps{top:14px}
       </article>
 
       <article class="tile spot rv">
-        <div class="badge"><svg class="i"><use href="#mx-hotel"/></svg></div>
-        <span class="idx">ii.</span>
-        <div style="margin-top:110px">
-          <h3>Destination Arrival</h3>
-          <p>Arrive at your hotel, riad, or resort with elegance, privacy, and a smooth transfer experience across Marrakech.</p>
+        <div class="art">
+          <img class="art-plane" src="https://i.ibb.co/4nL1QWgw/IMG-5378.png" alt="Destination arrival in Marrakech" loading="lazy">
+          <img class="art-car" src="https://i.ibb.co/1tkdbcf3/IMG-5379.png" alt="Private chauffeur arrival in Marrakech" loading="lazy">
         </div>
+        <span class="idx">ii.</span>
+        <h3>Destination Arrival</h3>
+        <p>Arrive at your hotel, riad, or resort with elegance, privacy, and a smooth transfer experience across Marrakech.</p>
       </article>
 
       <article class="tile spot rv">
         <div class="art">
-          <img class="art-city" src="https://i.ibb.co/TxqtnrrC/IMG-5380.png" alt="Atlas Mountains tour transfer" loading="lazy">
-          <img class="art-city-car" src="https://i.ibb.co/q3dSFMjY/IMG-5377.png" alt="Toyota Prado luxury chauffeur" loading="lazy">
+          <img class="art-plane" src="https://i.ibb.co/TxqtnrrC/IMG-5380.png" alt="Atlas Mountains tour transfer" loading="lazy">
+          <img class="art-car" src="https://i.ibb.co/q3dSFMjY/IMG-5377.png" alt="Toyota Prado luxury chauffeur" loading="lazy">
         </div>
         <span class="idx">iii.</span>
-        <div style="margin-top:200px">
-          <h3>Atlas Mountains Experience</h3>
-          <p>Enjoy a private journey through the stunning Atlas Mountains with scenic roads, panoramic views, and authentic Berber villages, all in comfort with a professional driver.</p>
-        </div>
+        <h3>Atlas Mountains Experience</h3>
+        <p>Enjoy a private journey through the stunning Atlas Mountains with scenic roads, panoramic views, and authentic Berber villages, all in comfort with a professional driver.</p>
       </article>
     </div>
   </div>
